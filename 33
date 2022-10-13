@@ -1,0 +1,11 @@
+<?php
+
+$company1 = 'Apple';
+$company2 = 'Samsung';
+
+// BEGIN (write your solution here)
+$result1 = strlen($company1);
+$result2 = strlen($company2);
+
+print_r($result1 + $result2);
+// END
