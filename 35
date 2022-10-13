@@ -1,0 +1,8 @@
+<?php
+
+$number = 10.1234;
+
+// BEGIN (write your solution here)
+$number = round($number, 2);
+print_r($number);
+// END
