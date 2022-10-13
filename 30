@@ -1,0 +1,7 @@
+<?php
+
+$stark = 'Arya';
+$phrase = 'Do you want to eat';
+// BEGIN (write your solution here)
+print_r("{$phrase}, {$stark}?");
+// END
