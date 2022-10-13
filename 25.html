@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://ru.code-basics.com/languages/php/lessons/concatenation#editor -->
+<html class="x-h-md-100" lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="IE=Edge" http-equiv="X-UA-Compatible"><meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"><meta content="article" property="og:type"><meta content="Переменные и конкатенация | PHP" property="og:title"><meta content="https://ru.code-basics.com/languages/php/lessons/concatenation" property="og:url"><meta content="https://ru.code-basics.com/assets/php-d12db2f02f0a5e777102f0151c8b312b2c5924792126bc570ee5b2c0de288121.png" property="og:image"><meta content="[PHP] — Переменные и конкатенация — 
+Для закрепления предыдущей темы попробуем использовать переменные с конкатенацией. Синтаксически ничего не меняется: мы умеем конкатенировать (склеивать) две строки:
+
+```php
+&lt;?php
+..." property="og:description"><meta content="[PHP] — Переменные и конкатенация — 
+Для закрепления предыдущей темы попробуем использовать переменные с конкатенацией. Синтаксически ничего не меняется: мы умеем конкатенировать (склеивать) две ст..." name="description"><meta content="ru" property="og:locale"><link href="https://code-basics.com/languages/php/lessons/concatenation" hreflang="en" rel="alternate"><link href="https://ru.code-basics.com/languages/php/lessons/concatenation" hreflang="ru" rel="alternate"><link href="https://ru.code-basics.com/languages/php/lessons/concatenation" hreflang="x-default" rel="alternate"><link rel="icon" type="image/x-icon" href="https://ru.code-basics.com/assets/favicon-e1292406d9d20474f4571bbcee672cf48c62cba4e3e7526c518fb042ace4e127.ico"><meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="rezOiX8u5lUoICixrg810Erj9BjG4cEuoVsgIJT9hQpk6qNkWwJNVP1izzXR7lnRs19jHL6NX-yFxnuUqWzOKg"><title>Переменные и конкатенация | PHP</title>
+<link rel="canonical" href="https://ru.code-basics.com/languages/php/lessons/concatenation">
+<link rel="amphtml" href="https://ru.code-basics.com/languages/php/lessons/concatenation.amp"><script src="./25_files/get-settings" type="text/javascript" async=""></script><script src="./25_files/get-settings" type="text/javascript" async=""></script><script src="./25_files/get-settings" type="text/javascript" async=""></script><script src="./25_files/get-phone" data-roistat-script-id="get-phone" type="text/javascript" async=""></script><script src="./25_files/get-settings" type="text/javascript" async=""></script><script src="./25_files/get-settings" type="text/javascript" async=""></script><script src="./25_files/get-settings" type="text/javascript" async=""></script><script src="./25_files/get-settings" type="text/javascript" async=""></script><script src="./25_files/get-settings" type="text/javascript" async=""></script><script src="./25_files/get-settings" type="text/javascript" async=""></script><script src="./25_files/get-settings" type="text/javascript" async=""></script><script src="./25_files/get-settings" type="text/javascript" async=""></script><script src="./25_files/get-settings" type="text/javascript" async=""></script><script src="./25_files/approve" type="text/javascript" async=""></script><script async="" src="./25_files/counter.js.Без названия"></script><script type="text/javascript" integrity="sha384-VuGgAcmMrGHihvjXxxBVMIqoDFXc8/PO9q/08kCgq4Wn1iPnSmUbI3xhXaFozVFv" crossorigin="anonymous" async="" src="./25_files/amplitude-8.18.1-min.gz.js.Без названия"></script><script gtm="GTM-WVMW3V8" type="text/javascript" async="" src="./25_files/optimize.js.Без названия"></script><script type="text/javascript" async="" src="./25_files/js"></script><script type="text/javascript" async="" src="./25_files/index.js.Без названия"></script><script charset="UTF-8" defer="" src="./25_files/module.js.Без названия"></script><script src="./25_files/diffuser.js.Без названия" async=""></script><script type="text/javascript" async="" id="topmailru-code" src="./25_files/code.js.Без названия"></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script async="" src="./25_files/tag.js.Без названия"></script><script type="text/javascript" async="" src="./25_files/analytics.js.Без названия"></script><script type="text/javascript" async="" src="./25_files/analytics.js(1).Без названия"></script><script async="" src="./25_files/gtm.js.Без названия"></script><script>
+//<![CDATA[
+window.gon={};gon.fired_events={"lesson_finished":{"user":{"id":215723,"first_name":"Феодор","last_name":null,"email":"viacheslav14rus@gmail.com","nickname":null,"github_uid":null,"updated_at":"2022-10-11T18:47:23.108Z","facebook_uid":null,"password_digest":"$2a$12$LVD80zpIwevGvGhB2fDd5.dK4Qbs2KDnGJwLP58HnsTCAfJxyaG/2","confirmation_token":null,"reset_password_token":null,"state":"active","locale":"ru","email_delivery_state":null,"admin":null,"created_at":"2022-10-11T18:47:23.108Z"},"language":{"id":960,"name":"PHP","created_at":"2022-09-21T06:40:30.314Z","locale":"ru"},"lesson":{"id":16,"slug":"expressions","created_at":"2017-12-17T22:58:27.732Z"},"finished_at":"2022-10-12T20:07:07.069Z"}};gon.current_user={"id":215723,"email":"viacheslav14rus@gmail.com","created_at":"2022-10-11T18:47:23.108Z","is_guest":false};gon.locale="ru";gon.events=["signed_up","next_lesson","lesson_finished","language_finished"];gon.lesson_member={"id":7003446,"user_id":215723,"lesson_id":17,"updated_at":"2022-10-12T20:07:09.092Z","state":"started","language_id":1,"created_at":"2022-10-12T20:07:09.092Z","language_member_id":279907};gon.language="php";gon.lesson_version={"id":36323,"order":18,"original_code":"\u003c?php\n\n$info = \"We couldn't verify you mother's maiden name.\";\n$intro = \"\\nHere is important information about your account security.\";\n\n$firstName = 'Joffrey';\n$greeting = 'Hello';\n\n// BEGIN\nprint_r($greeting . \", \" . $firstName . \"!\");\nprint_r($intro . \"\\n\" . $info);\n// END\n","prepared_code":"\u003c?php\n\n$info = \"We couldn't verify you mother's maiden name.\";\n$intro = \"\\nHere is important information about your account security.\";\n\n$firstName = 'Joffrey';\n$greeting = 'Hello';\n\n// BEGIN (write your solution here)\n\n// END\n","test_code":"\u003c?php // phpcs:ignore PSR1.Files.SideEffects\n\nnamespace HexletBasics\\Variables\\Concatenation;\n\nuse PHPUnit\\Framework\\TestCase;\n\n\\HexletBasics\\Functions\\runScript();\n\nclass Test extends TestCase\n{\n    public function test()\n    {\n        $expected = \u003c\u003c\u003cHERE\nHello, Joffrey!\nHere is important information about your account security.\nWe couldn't verify you mother's maiden name.\nHERE;\n\n        $this-\u003eexpectOutputString($expected);\n        require 'index.php';\n    }\n}\n","natural_order":25,"path_to_code":"/exercises-php/modules/30-variables/18-concatenation","language_version_id":960,"language_id":1,"lesson_id":17,"module_version_id":6038,"created_at":"2022-09-21T06:40:37.864Z","updated_at":"2022-09-21T06:40:37.864Z"};gon.lesson={"id":17,"slug":"concatenation","state":"active","order":18,"original_code":"\u003c?php\n\n$info = \"We couldn't verify you mother's maiden name.\";\n$intro = \"\\nHere is important information about your account security.\";\n\n$firstName = 'Joffrey';\n$greeting = 'Hello';\n\n// BEGIN\nprint_r($greeting . \", \" . $firstName . \"!\");\nprint_r($intro . \"\\n\" . $info);\n// END\n","prepared_code":"\u003c?php\n\n$info = \"We couldn't verify you mother's maiden name.\";\n$intro = \"\\nHere is important information about your account security.\";\n\n$firstName = 'Joffrey';\n$greeting = 'Hello';\n\n// BEGIN\n\n// END\n","test_code":"\u003c?php // phpcs:ignore PSR1.Files.SideEffects\n\nnamespace HexletBasics\\Variables\\Concatenation;\n\nuse PHPUnit\\Framework\\TestCase;\n\n\\HexletBasics\\Functions\\runScript();\n\nclass Test extends TestCase\n{\n    public function test()\n    {\n        $expected = \u003c\u003c\u003cHERE\nHello, Joffrey!\nHere is important information about your account security.\nWe couldn't verify you mother's maiden name.\nHERE;\n\n        $this-\u003eexpectOutputString($expected);\n        require 'index.php';\n    }\n}\n","path_to_code":"/exercises-php/modules/30-variables/18-concatenation","module_id":4,"language_id":1,"upload_id":1178,"updated_at":"2020-11-24T17:25:20.000Z","natural_order":25,"created_at":"2017-12-17T22:58:27.755Z"};
+//]]>
+</script><link rel="stylesheet" href="./25_files/vendors-9fc4914607f462b96214a0f783c859ac0b8982b4fce5be19a1ef811b56dac599.css"><link rel="stylesheet" href="./25_files/application-0d2b21404d8298019cc81092e7a47191ee9b1bb2afec3e842091aac14ddb7cfc.css"><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WVMW3V8');</script><script>!function(){
+  var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://collect-analytics.hexlet.io/analytics/" + key + "/analytics.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.13.1";
+
+  analytics.load("45dec37f43fa49e392061da423f072ca");
+  analytics.page();
+}}();</script><script src="./25_files/vendors-a04de5c03c4d32f351ce78890820584cc83714860960144beb722e55d238a452.js.Без названия" defer="defer"></script><script src="./25_files/application-112b31dba4765d8da1ca14262c9cf85d3b89a3e2b0ec4ee238b87ebd538e5d7c.js.Без названия" async="async"></script><script src="./25_files/lessonPage-c1459419776a7a6dcd1c9b49a81129a5401de42a478092791c4b7a030e0ca0f0.js.Без названия" defer="defer"></script><script src="./25_files/embed.js.Без названия" data-timestamp="1665669967364"></script><script type="text/javascript" async="" src="./25_files/openapi.js.Без названия"></script><link rel="prefetch" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.62d2159c406b6c067144a0ba5681724e.css"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.33bc87b2c4f9324203cc85b7dd1d0492.js"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.baabe0e921041a0435be1aa95c2633a0.js"><link rel="prefetch" as="script" href="https://disqus.com/next/config.js"><script async="async" type="text/javascript" src="./25_files/editor.main.js.Без названия"></script><script type="text/javascript" async="" src="./25_files/embed.js(1).Без названия"></script><script type="text/javascript" charset="utf-8" src="./25_files/saved_resource" async=""></script><link rel="stylesheet" type="text/css" data-name="vs/editor/editor.main" href="./25_files/editor.main.css"><script async="async" type="text/javascript" src="./25_files/editor.main.nls.js.Без названия"></script><script async="async" type="text/javascript" src="./25_files/php.js.Без названия"></script><style type="text/css" media="screen" class="monaco-colors">.codicon-add:before { content: '\ea60'; }
+.codicon-plus:before { content: '\ea60'; }
+.codicon-gist-new:before { content: '\ea60'; }
+.codicon-repo-create:before { content: '\ea60'; }
+.codicon-lightbulb:before { content: '\ea61'; }
+.codicon-light-bulb:before { content: '\ea61'; }
+.codicon-repo:before { content: '\ea62'; }
+.codicon-repo-delete:before { content: '\ea62'; }
+.codicon-gist-fork:before { content: '\ea63'; }
+.codicon-repo-forked:before { content: '\ea63'; }
+.codicon-git-pull-request:before { content: '\ea64'; }
+.codicon-git-pull-request-abandoned:before { content: '\ea64'; }
+.codicon-record-keys:before { content: '\ea65'; }
+.codicon-keyboard:before { content: '\ea65'; }
+.codicon-tag:before { content: '\ea66'; }
+.codicon-tag-add:before { content: '\ea66'; }
+.codicon-tag-remove:before { content: '\ea66'; }
+.codicon-person:before { content: '\ea67'; }
+.codicon-person-follow:before { content: '\ea67'; }
+.codicon-person-outline:before { content: '\ea67'; }
+.codicon-person-filled:before { content: '\ea67'; }
+.codicon-git-branch:before { content: '\ea68'; }
+.codicon-git-branch-create:before { content: '\ea68'; }
+.codicon-git-branch-delete:before { content: '\ea68'; }
+.codicon-source-control:before { content: '\ea68'; }
+.codicon-mirror:before { content: '\ea69'; }
+.codicon-mirror-public:before { content: '\ea69'; }
+.codicon-star:before { content: '\ea6a'; }
+.codicon-star-add:before { content: '\ea6a'; }
+.codicon-star-delete:before { content: '\ea6a'; }
+.codicon-star-empty:before { content: '\ea6a'; }
+.codicon-comment:before { content: '\ea6b'; }
+.codicon-comment-add:before { content: '\ea6b'; }
+.codicon-alert:before { content: '\ea6c'; }
+.codicon-warning:before { content: '\ea6c'; }
+.codicon-search:before { content: '\ea6d'; }
+.codicon-search-save:before { content: '\ea6d'; }
+.codicon-log-out:before { content: '\ea6e'; }
+.codicon-sign-out:before { content: '\ea6e'; }
+.codicon-log-in:before { content: '\ea6f'; }
+.codicon-sign-in:before { content: '\ea6f'; }
+.codicon-eye:before { content: '\ea70'; }
+.codicon-eye-unwatch:before { content: '\ea70'; }
+.codicon-eye-watch:before { content: '\ea70'; }
+.codicon-circle-filled:before { content: '\ea71'; }
+.codicon-primitive-dot:before { content: '\ea71'; }
+.codicon-close-dirty:before { content: '\ea71'; }
+.codicon-debug-breakpoint:before { content: '\ea71'; }
+.codicon-debug-breakpoint-disabled:before { content: '\ea71'; }
+.codicon-debug-hint:before { content: '\ea71'; }
+.codicon-primitive-square:before { content: '\ea72'; }
+.codicon-edit:before { content: '\ea73'; }
+.codicon-pencil:before { content: '\ea73'; }
+.codicon-info:before { content: '\ea74'; }
+.codicon-issue-opened:before { content: '\ea74'; }
+.codicon-gist-private:before { content: '\ea75'; }
+.codicon-git-fork-private:before { content: '\ea75'; }
+.codicon-lock:before { content: '\ea75'; }
+.codicon-mirror-private:before { content: '\ea75'; }
+.codicon-close:before { content: '\ea76'; }
+.codicon-remove-close:before { content: '\ea76'; }
+.codicon-x:before { content: '\ea76'; }
+.codicon-repo-sync:before { content: '\ea77'; }
+.codicon-sync:before { content: '\ea77'; }
+.codicon-clone:before { content: '\ea78'; }
+.codicon-desktop-download:before { content: '\ea78'; }
+.codicon-beaker:before { content: '\ea79'; }
+.codicon-microscope:before { content: '\ea79'; }
+.codicon-vm:before { content: '\ea7a'; }
+.codicon-device-desktop:before { content: '\ea7a'; }
+.codicon-file:before { content: '\ea7b'; }
+.codicon-file-text:before { content: '\ea7b'; }
+.codicon-more:before { content: '\ea7c'; }
+.codicon-ellipsis:before { content: '\ea7c'; }
+.codicon-kebab-horizontal:before { content: '\ea7c'; }
+.codicon-mail-reply:before { content: '\ea7d'; }
+.codicon-reply:before { content: '\ea7d'; }
+.codicon-organization:before { content: '\ea7e'; }
+.codicon-organization-filled:before { content: '\ea7e'; }
+.codicon-organization-outline:before { content: '\ea7e'; }
+.codicon-new-file:before { content: '\ea7f'; }
+.codicon-file-add:before { content: '\ea7f'; }
+.codicon-new-folder:before { content: '\ea80'; }
+.codicon-file-directory-create:before { content: '\ea80'; }
+.codicon-trash:before { content: '\ea81'; }
+.codicon-trashcan:before { content: '\ea81'; }
+.codicon-history:before { content: '\ea82'; }
+.codicon-clock:before { content: '\ea82'; }
+.codicon-folder:before { content: '\ea83'; }
+.codicon-file-directory:before { content: '\ea83'; }
+.codicon-symbol-folder:before { content: '\ea83'; }
+.codicon-logo-github:before { content: '\ea84'; }
+.codicon-mark-github:before { content: '\ea84'; }
+.codicon-github:before { content: '\ea84'; }
+.codicon-terminal:before { content: '\ea85'; }
+.codicon-console:before { content: '\ea85'; }
+.codicon-repl:before { content: '\ea85'; }
+.codicon-zap:before { content: '\ea86'; }
+.codicon-symbol-event:before { content: '\ea86'; }
+.codicon-error:before { content: '\ea87'; }
+.codicon-stop:before { content: '\ea87'; }
+.codicon-variable:before { content: '\ea88'; }
+.codicon-symbol-variable:before { content: '\ea88'; }
+.codicon-array:before { content: '\ea8a'; }
+.codicon-symbol-array:before { content: '\ea8a'; }
+.codicon-symbol-module:before { content: '\ea8b'; }
+.codicon-symbol-package:before { content: '\ea8b'; }
+.codicon-symbol-namespace:before { content: '\ea8b'; }
+.codicon-symbol-object:before { content: '\ea8b'; }
+.codicon-symbol-method:before { content: '\ea8c'; }
+.codicon-symbol-function:before { content: '\ea8c'; }
+.codicon-symbol-constructor:before { content: '\ea8c'; }
+.codicon-symbol-boolean:before { content: '\ea8f'; }
+.codicon-symbol-null:before { content: '\ea8f'; }
+.codicon-symbol-numeric:before { content: '\ea90'; }
+.codicon-symbol-number:before { content: '\ea90'; }
+.codicon-symbol-structure:before { content: '\ea91'; }
+.codicon-symbol-struct:before { content: '\ea91'; }
+.codicon-symbol-parameter:before { content: '\ea92'; }
+.codicon-symbol-type-parameter:before { content: '\ea92'; }
+.codicon-symbol-key:before { content: '\ea93'; }
+.codicon-symbol-text:before { content: '\ea93'; }
+.codicon-symbol-reference:before { content: '\ea94'; }
+.codicon-go-to-file:before { content: '\ea94'; }
+.codicon-symbol-enum:before { content: '\ea95'; }
+.codicon-symbol-value:before { content: '\ea95'; }
+.codicon-symbol-ruler:before { content: '\ea96'; }
+.codicon-symbol-unit:before { content: '\ea96'; }
+.codicon-activate-breakpoints:before { content: '\ea97'; }
+.codicon-archive:before { content: '\ea98'; }
+.codicon-arrow-both:before { content: '\ea99'; }
+.codicon-arrow-down:before { content: '\ea9a'; }
+.codicon-arrow-left:before { content: '\ea9b'; }
+.codicon-arrow-right:before { content: '\ea9c'; }
+.codicon-arrow-small-down:before { content: '\ea9d'; }
+.codicon-arrow-small-left:before { content: '\ea9e'; }
+.codicon-arrow-small-right:before { content: '\ea9f'; }
+.codicon-arrow-small-up:before { content: '\eaa0'; }
+.codicon-arrow-up:before { content: '\eaa1'; }
+.codicon-bell:before { content: '\eaa2'; }
+.codicon-bold:before { content: '\eaa3'; }
+.codicon-book:before { content: '\eaa4'; }
+.codicon-bookmark:before { content: '\eaa5'; }
+.codicon-debug-breakpoint-conditional-unverified:before { content: '\eaa6'; }
+.codicon-debug-breakpoint-conditional:before { content: '\eaa7'; }
+.codicon-debug-breakpoint-conditional-disabled:before { content: '\eaa7'; }
+.codicon-debug-breakpoint-data-unverified:before { content: '\eaa8'; }
+.codicon-debug-breakpoint-data:before { content: '\eaa9'; }
+.codicon-debug-breakpoint-data-disabled:before { content: '\eaa9'; }
+.codicon-debug-breakpoint-log-unverified:before { content: '\eaaa'; }
+.codicon-debug-breakpoint-log:before { content: '\eaab'; }
+.codicon-debug-breakpoint-log-disabled:before { content: '\eaab'; }
+.codicon-briefcase:before { content: '\eaac'; }
+.codicon-broadcast:before { content: '\eaad'; }
+.codicon-browser:before { content: '\eaae'; }
+.codicon-bug:before { content: '\eaaf'; }
+.codicon-calendar:before { content: '\eab0'; }
+.codicon-case-sensitive:before { content: '\eab1'; }
+.codicon-check:before { content: '\eab2'; }
+.codicon-checklist:before { content: '\eab3'; }
+.codicon-chevron-down:before { content: '\eab4'; }
+.codicon-drop-down-button:before { content: '\eab4'; }
+.codicon-chevron-left:before { content: '\eab5'; }
+.codicon-chevron-right:before { content: '\eab6'; }
+.codicon-chevron-up:before { content: '\eab7'; }
+.codicon-chrome-close:before { content: '\eab8'; }
+.codicon-chrome-maximize:before { content: '\eab9'; }
+.codicon-chrome-minimize:before { content: '\eaba'; }
+.codicon-chrome-restore:before { content: '\eabb'; }
+.codicon-circle-outline:before { content: '\eabc'; }
+.codicon-debug-breakpoint-unverified:before { content: '\eabc'; }
+.codicon-circle-slash:before { content: '\eabd'; }
+.codicon-circuit-board:before { content: '\eabe'; }
+.codicon-clear-all:before { content: '\eabf'; }
+.codicon-clippy:before { content: '\eac0'; }
+.codicon-close-all:before { content: '\eac1'; }
+.codicon-cloud-download:before { content: '\eac2'; }
+.codicon-cloud-upload:before { content: '\eac3'; }
+.codicon-code:before { content: '\eac4'; }
+.codicon-collapse-all:before { content: '\eac5'; }
+.codicon-color-mode:before { content: '\eac6'; }
+.codicon-comment-discussion:before { content: '\eac7'; }
+.codicon-compare-changes:before { content: '\eafd'; }
+.codicon-credit-card:before { content: '\eac9'; }
+.codicon-dash:before { content: '\eacc'; }
+.codicon-dashboard:before { content: '\eacd'; }
+.codicon-database:before { content: '\eace'; }
+.codicon-debug-continue:before { content: '\eacf'; }
+.codicon-debug-disconnect:before { content: '\ead0'; }
+.codicon-debug-pause:before { content: '\ead1'; }
+.codicon-debug-restart:before { content: '\ead2'; }
+.codicon-debug-start:before { content: '\ead3'; }
+.codicon-debug-step-into:before { content: '\ead4'; }
+.codicon-debug-step-out:before { content: '\ead5'; }
+.codicon-debug-step-over:before { content: '\ead6'; }
+.codicon-debug-stop:before { content: '\ead7'; }
+.codicon-debug:before { content: '\ead8'; }
+.codicon-device-camera-video:before { content: '\ead9'; }
+.codicon-device-camera:before { content: '\eada'; }
+.codicon-device-mobile:before { content: '\eadb'; }
+.codicon-diff-added:before { content: '\eadc'; }
+.codicon-diff-ignored:before { content: '\eadd'; }
+.codicon-diff-modified:before { content: '\eade'; }
+.codicon-diff-removed:before { content: '\eadf'; }
+.codicon-diff-renamed:before { content: '\eae0'; }
+.codicon-diff:before { content: '\eae1'; }
+.codicon-discard:before { content: '\eae2'; }
+.codicon-editor-layout:before { content: '\eae3'; }
+.codicon-empty-window:before { content: '\eae4'; }
+.codicon-exclude:before { content: '\eae5'; }
+.codicon-extensions:before { content: '\eae6'; }
+.codicon-eye-closed:before { content: '\eae7'; }
+.codicon-file-binary:before { content: '\eae8'; }
+.codicon-file-code:before { content: '\eae9'; }
+.codicon-file-media:before { content: '\eaea'; }
+.codicon-file-pdf:before { content: '\eaeb'; }
+.codicon-file-submodule:before { content: '\eaec'; }
+.codicon-file-symlink-directory:before { content: '\eaed'; }
+.codicon-file-symlink-file:before { content: '\eaee'; }
+.codicon-file-zip:before { content: '\eaef'; }
+.codicon-files:before { content: '\eaf0'; }
+.codicon-filter:before { content: '\eaf1'; }
+.codicon-flame:before { content: '\eaf2'; }
+.codicon-fold-down:before { content: '\eaf3'; }
+.codicon-fold-up:before { content: '\eaf4'; }
+.codicon-fold:before { content: '\eaf5'; }
+.codicon-folder-active:before { content: '\eaf6'; }
+.codicon-folder-opened:before { content: '\eaf7'; }
+.codicon-gear:before { content: '\eaf8'; }
+.codicon-gift:before { content: '\eaf9'; }
+.codicon-gist-secret:before { content: '\eafa'; }
+.codicon-gist:before { content: '\eafb'; }
+.codicon-git-commit:before { content: '\eafc'; }
+.codicon-git-compare:before { content: '\eafd'; }
+.codicon-git-merge:before { content: '\eafe'; }
+.codicon-github-action:before { content: '\eaff'; }
+.codicon-github-alt:before { content: '\eb00'; }
+.codicon-globe:before { content: '\eb01'; }
+.codicon-grabber:before { content: '\eb02'; }
+.codicon-graph:before { content: '\eb03'; }
+.codicon-gripper:before { content: '\eb04'; }
+.codicon-heart:before { content: '\eb05'; }
+.codicon-home:before { content: '\eb06'; }
+.codicon-horizontal-rule:before { content: '\eb07'; }
+.codicon-hubot:before { content: '\eb08'; }
+.codicon-inbox:before { content: '\eb09'; }
+.codicon-issue-closed:before { content: '\eba4'; }
+.codicon-issue-reopened:before { content: '\eb0b'; }
+.codicon-issues:before { content: '\eb0c'; }
+.codicon-italic:before { content: '\eb0d'; }
+.codicon-jersey:before { content: '\eb0e'; }
+.codicon-json:before { content: '\eb0f'; }
+.codicon-kebab-vertical:before { content: '\eb10'; }
+.codicon-key:before { content: '\eb11'; }
+.codicon-law:before { content: '\eb12'; }
+.codicon-lightbulb-autofix:before { content: '\eb13'; }
+.codicon-link-external:before { content: '\eb14'; }
+.codicon-link:before { content: '\eb15'; }
+.codicon-list-ordered:before { content: '\eb16'; }
+.codicon-list-unordered:before { content: '\eb17'; }
+.codicon-live-share:before { content: '\eb18'; }
+.codicon-loading:before { content: '\eb19'; }
+.codicon-location:before { content: '\eb1a'; }
+.codicon-mail-read:before { content: '\eb1b'; }
+.codicon-mail:before { content: '\eb1c'; }
+.codicon-markdown:before { content: '\eb1d'; }
+.codicon-megaphone:before { content: '\eb1e'; }
+.codicon-mention:before { content: '\eb1f'; }
+.codicon-milestone:before { content: '\eb20'; }
+.codicon-mortar-board:before { content: '\eb21'; }
+.codicon-move:before { content: '\eb22'; }
+.codicon-multiple-windows:before { content: '\eb23'; }
+.codicon-mute:before { content: '\eb24'; }
+.codicon-no-newline:before { content: '\eb25'; }
+.codicon-note:before { content: '\eb26'; }
+.codicon-octoface:before { content: '\eb27'; }
+.codicon-open-preview:before { content: '\eb28'; }
+.codicon-package:before { content: '\eb29'; }
+.codicon-paintcan:before { content: '\eb2a'; }
+.codicon-pin:before { content: '\eb2b'; }
+.codicon-play:before { content: '\eb2c'; }
+.codicon-run:before { content: '\eb2c'; }
+.codicon-plug:before { content: '\eb2d'; }
+.codicon-preserve-case:before { content: '\eb2e'; }
+.codicon-preview:before { content: '\eb2f'; }
+.codicon-project:before { content: '\eb30'; }
+.codicon-pulse:before { content: '\eb31'; }
+.codicon-question:before { content: '\eb32'; }
+.codicon-quote:before { content: '\eb33'; }
+.codicon-radio-tower:before { content: '\eb34'; }
+.codicon-reactions:before { content: '\eb35'; }
+.codicon-references:before { content: '\eb36'; }
+.codicon-refresh:before { content: '\eb37'; }
+.codicon-regex:before { content: '\eb38'; }
+.codicon-remote-explorer:before { content: '\eb39'; }
+.codicon-remote:before { content: '\eb3a'; }
+.codicon-remove:before { content: '\eb3b'; }
+.codicon-replace-all:before { content: '\eb3c'; }
+.codicon-replace:before { content: '\eb3d'; }
+.codicon-repo-clone:before { content: '\eb3e'; }
+.codicon-repo-force-push:before { content: '\eb3f'; }
+.codicon-repo-pull:before { content: '\eb40'; }
+.codicon-repo-push:before { content: '\eb41'; }
+.codicon-report:before { content: '\eb42'; }
+.codicon-request-changes:before { content: '\eb43'; }
+.codicon-rocket:before { content: '\eb44'; }
+.codicon-root-folder-opened:before { content: '\eb45'; }
+.codicon-root-folder:before { content: '\eb46'; }
+.codicon-rss:before { content: '\eb47'; }
+.codicon-ruby:before { content: '\eb48'; }
+.codicon-save-all:before { content: '\eb49'; }
+.codicon-save-as:before { content: '\eb4a'; }
+.codicon-save:before { content: '\eb4b'; }
+.codicon-screen-full:before { content: '\eb4c'; }
+.codicon-screen-normal:before { content: '\eb4d'; }
+.codicon-search-stop:before { content: '\eb4e'; }
+.codicon-server:before { content: '\eb50'; }
+.codicon-settings-gear:before { content: '\eb51'; }
+.codicon-settings:before { content: '\eb52'; }
+.codicon-shield:before { content: '\eb53'; }
+.codicon-smiley:before { content: '\eb54'; }
+.codicon-sort-precedence:before { content: '\eb55'; }
+.codicon-split-horizontal:before { content: '\eb56'; }
+.codicon-split-vertical:before { content: '\eb57'; }
+.codicon-squirrel:before { content: '\eb58'; }
+.codicon-star-full:before { content: '\eb59'; }
+.codicon-star-half:before { content: '\eb5a'; }
+.codicon-symbol-class:before { content: '\eb5b'; }
+.codicon-symbol-color:before { content: '\eb5c'; }
+.codicon-symbol-customcolor:before { content: '\eb5c'; }
+.codicon-symbol-constant:before { content: '\eb5d'; }
+.codicon-symbol-enum-member:before { content: '\eb5e'; }
+.codicon-symbol-field:before { content: '\eb5f'; }
+.codicon-symbol-file:before { content: '\eb60'; }
+.codicon-symbol-interface:before { content: '\eb61'; }
+.codicon-symbol-keyword:before { content: '\eb62'; }
+.codicon-symbol-misc:before { content: '\eb63'; }
+.codicon-symbol-operator:before { content: '\eb64'; }
+.codicon-symbol-property:before { content: '\eb65'; }
+.codicon-wrench:before { content: '\eb65'; }
+.codicon-wrench-subaction:before { content: '\eb65'; }
+.codicon-symbol-snippet:before { content: '\eb66'; }
+.codicon-tasklist:before { content: '\eb67'; }
+.codicon-telescope:before { content: '\eb68'; }
+.codicon-text-size:before { content: '\eb69'; }
+.codicon-three-bars:before { content: '\eb6a'; }
+.codicon-thumbsdown:before { content: '\eb6b'; }
+.codicon-thumbsup:before { content: '\eb6c'; }
+.codicon-tools:before { content: '\eb6d'; }
+.codicon-triangle-down:before { content: '\eb6e'; }
+.codicon-triangle-left:before { content: '\eb6f'; }
+.codicon-triangle-right:before { content: '\eb70'; }
+.codicon-triangle-up:before { content: '\eb71'; }
+.codicon-twitter:before { content: '\eb72'; }
+.codicon-unfold:before { content: '\eb73'; }
+.codicon-unlock:before { content: '\eb74'; }
+.codicon-unmute:before { content: '\eb75'; }
+.codicon-unverified:before { content: '\eb76'; }
+.codicon-verified:before { content: '\eb77'; }
+.codicon-versions:before { content: '\eb78'; }
+.codicon-vm-active:before { content: '\eb79'; }
+.codicon-vm-outline:before { content: '\eb7a'; }
+.codicon-vm-running:before { content: '\eb7b'; }
+.codicon-watch:before { content: '\eb7c'; }
+.codicon-whitespace:before { content: '\eb7d'; }
+.codicon-whole-word:before { content: '\eb7e'; }
+.codicon-window:before { content: '\eb7f'; }
+.codicon-word-wrap:before { content: '\eb80'; }
+.codicon-zoom-in:before { content: '\eb81'; }
+.codicon-zoom-out:before { content: '\eb82'; }
+.codicon-list-filter:before { content: '\eb83'; }
+.codicon-list-flat:before { content: '\eb84'; }
+.codicon-list-selection:before { content: '\eb85'; }
+.codicon-selection:before { content: '\eb85'; }
+.codicon-list-tree:before { content: '\eb86'; }
+.codicon-debug-breakpoint-function-unverified:before { content: '\eb87'; }
+.codicon-debug-breakpoint-function:before { content: '\eb88'; }
+.codicon-debug-breakpoint-function-disabled:before { content: '\eb88'; }
+.codicon-debug-stackframe-active:before { content: '\eb89'; }
+.codicon-debug-stackframe-dot:before { content: '\eb8a'; }
+.codicon-debug-stackframe:before { content: '\eb8b'; }
+.codicon-debug-stackframe-focused:before { content: '\eb8b'; }
+.codicon-debug-breakpoint-unsupported:before { content: '\eb8c'; }
+.codicon-symbol-string:before { content: '\eb8d'; }
+.codicon-debug-reverse-continue:before { content: '\eb8e'; }
+.codicon-debug-step-back:before { content: '\eb8f'; }
+.codicon-debug-restart-frame:before { content: '\eb90'; }
+.codicon-call-incoming:before { content: '\eb92'; }
+.codicon-call-outgoing:before { content: '\eb93'; }
+.codicon-menu:before { content: '\eb94'; }
+.codicon-expand-all:before { content: '\eb95'; }
+.codicon-feedback:before { content: '\eb96'; }
+.codicon-group-by-ref-type:before { content: '\eb97'; }
+.codicon-ungroup-by-ref-type:before { content: '\eb98'; }
+.codicon-account:before { content: '\eb99'; }
+.codicon-bell-dot:before { content: '\eb9a'; }
+.codicon-debug-console:before { content: '\eb9b'; }
+.codicon-library:before { content: '\eb9c'; }
+.codicon-output:before { content: '\eb9d'; }
+.codicon-run-all:before { content: '\eb9e'; }
+.codicon-sync-ignored:before { content: '\eb9f'; }
+.codicon-pinned:before { content: '\eba0'; }
+.codicon-github-inverted:before { content: '\eba1'; }
+.codicon-debug-alt:before { content: '\eb91'; }
+.codicon-server-process:before { content: '\eba2'; }
+.codicon-server-environment:before { content: '\eba3'; }
+.codicon-pass:before { content: '\eba4'; }
+.codicon-stop-circle:before { content: '\eba5'; }
+.codicon-play-circle:before { content: '\eba6'; }
+.codicon-record:before { content: '\eba7'; }
+.codicon-debug-alt-small:before { content: '\eba8'; }
+.codicon-vm-connect:before { content: '\eba9'; }
+.codicon-cloud:before { content: '\ebaa'; }
+.codicon-merge:before { content: '\ebab'; }
+.codicon-export:before { content: '\ebac'; }
+.codicon-graph-left:before { content: '\ebad'; }
+.codicon-magnet:before { content: '\ebae'; }
+.codicon-notebook:before { content: '\ebaf'; }
+.codicon-redo:before { content: '\ebb0'; }
+.codicon-check-all:before { content: '\ebb1'; }
+.codicon-pinned-dirty:before { content: '\ebb2'; }
+.codicon-pass-filled:before { content: '\ebb3'; }
+.codicon-circle-large-filled:before { content: '\ebb4'; }
+.codicon-circle-large-outline:before { content: '\ebb5'; }
+.codicon-combine:before { content: '\ebb6'; }
+.codicon-gather:before { content: '\ebb6'; }
+.codicon-table:before { content: '\ebb7'; }
+.codicon-variable-group:before { content: '\ebb8'; }
+.codicon-type-hierarchy:before { content: '\ebb9'; }
+.codicon-type-hierarchy-sub:before { content: '\ebba'; }
+.codicon-type-hierarchy-super:before { content: '\ebbb'; }
+.codicon-git-pull-request-create:before { content: '\ebbc'; }
+.codicon-run-above:before { content: '\ebbd'; }
+.codicon-run-below:before { content: '\ebbe'; }
+.codicon-notebook-template:before { content: '\ebbf'; }
+.codicon-debug-rerun:before { content: '\ebc0'; }
+.codicon-workspace-trusted:before { content: '\ebc1'; }
+.codicon-workspace-untrusted:before { content: '\ebc2'; }
+.codicon-workspace-unspecified:before { content: '\ebc3'; }
+.codicon-terminal-cmd:before { content: '\ebc4'; }
+.codicon-terminal-debian:before { content: '\ebc5'; }
+.codicon-terminal-linux:before { content: '\ebc6'; }
+.codicon-terminal-powershell:before { content: '\ebc7'; }
+.codicon-terminal-tmux:before { content: '\ebc8'; }
+.codicon-terminal-ubuntu:before { content: '\ebc9'; }
+.codicon-terminal-bash:before { content: '\ebca'; }
+.codicon-arrow-swap:before { content: '\ebcb'; }
+.codicon-copy:before { content: '\ebcc'; }
+.codicon-person-add:before { content: '\ebcd'; }
+.codicon-filter-filled:before { content: '\ebce'; }
+.codicon-wand:before { content: '\ebcf'; }
+.codicon-debug-line-by-line:before { content: '\ebd0'; }
+.codicon-inspect:before { content: '\ebd1'; }
+.codicon-layers:before { content: '\ebd2'; }
+.codicon-layers-dot:before { content: '\ebd3'; }
+.codicon-layers-active:before { content: '\ebd4'; }
+.codicon-compass:before { content: '\ebd5'; }
+.codicon-compass-dot:before { content: '\ebd6'; }
+.codicon-compass-active:before { content: '\ebd7'; }
+.codicon-azure:before { content: '\ebd8'; }
+.codicon-issue-draft:before { content: '\ebd9'; }
+.codicon-git-pull-request-closed:before { content: '\ebda'; }
+.codicon-git-pull-request-draft:before { content: '\ebdb'; }
+.codicon-debug-all:before { content: '\ebdc'; }
+.codicon-debug-coverage:before { content: '\ebdd'; }
+.codicon-run-errors:before { content: '\ebde'; }
+.codicon-folder-library:before { content: '\ebdf'; }
+.codicon-debug-continue-small:before { content: '\ebe0'; }
+.codicon-beaker-stop:before { content: '\ebe1'; }
+.codicon-graph-line:before { content: '\ebe2'; }
+.codicon-graph-scatter:before { content: '\ebe3'; }
+.codicon-pie-chart:before { content: '\ebe4'; }
+.codicon-bracket:before { content: '\eb0f'; }
+.codicon-bracket-dot:before { content: '\ebe5'; }
+.codicon-bracket-error:before { content: '\ebe6'; }
+.codicon-lock-small:before { content: '\ebe7'; }
+.codicon-azure-devops:before { content: '\ebe8'; }
+.codicon-verified-filled:before { content: '\ebe9'; }
+.codicon-newline:before { content: '\ebea'; }
+.codicon-layout:before { content: '\ebeb'; }
+.codicon-layout-activitybar-left:before { content: '\ebec'; }
+.codicon-layout-activitybar-right:before { content: '\ebed'; }
+.codicon-layout-panel-left:before { content: '\ebee'; }
+.codicon-layout-panel-center:before { content: '\ebef'; }
+.codicon-layout-panel-justify:before { content: '\ebf0'; }
+.codicon-layout-panel-right:before { content: '\ebf1'; }
+.codicon-layout-panel:before { content: '\ebf2'; }
+.codicon-layout-sidebar-left:before { content: '\ebf3'; }
+.codicon-layout-sidebar-right:before { content: '\ebf4'; }
+.codicon-layout-statusbar:before { content: '\ebf5'; }
+.codicon-layout-menubar:before { content: '\ebf6'; }
+.codicon-layout-centered:before { content: '\ebf7'; }
+.codicon-target:before { content: '\ebf8'; }
+.codicon-indent:before { content: '\ebf9'; }
+.codicon-record-small:before { content: '\ebfa'; }
+.codicon-error-small:before { content: '\ebfb'; }
+.codicon-arrow-circle-down:before { content: '\ebfc'; }
+.codicon-arrow-circle-left:before { content: '\ebfd'; }
+.codicon-arrow-circle-right:before { content: '\ebfe'; }
+.codicon-arrow-circle-up:before { content: '\ebff'; }
+.codicon-dialog-error:before { content: '\ea87'; }
+.codicon-dialog-warning:before { content: '\ea6c'; }
+.codicon-dialog-info:before { content: '\ea74'; }
+.codicon-dialog-close:before { content: '\ea76'; }
+.codicon-tree-item-expanded:before { content: '\eab4'; }
+.codicon-tree-filter-on-type-on:before { content: '\eb83'; }
+.codicon-tree-filter-on-type-off:before { content: '\eb85'; }
+.codicon-tree-filter-clear:before { content: '\ea76'; }
+.codicon-tree-item-loading:before { content: '\eb19'; }
+.codicon-menu-selection:before { content: '\eab2'; }
+.codicon-menu-submenu:before { content: '\eab6'; }
+.codicon-menubar-more:before { content: '\ea7c'; }
+.codicon-scrollbar-button-left:before { content: '\eb6f'; }
+.codicon-scrollbar-button-right:before { content: '\eb70'; }
+.codicon-scrollbar-button-up:before { content: '\eb71'; }
+.codicon-scrollbar-button-down:before { content: '\eb6e'; }
+.codicon-toolbar-more:before { content: '\ea7c'; }
+.codicon-quick-input-back:before { content: '\ea9b'; }
+.codicon-widget-close:before { content: '\ea76'; }
+.codicon-goto-previous-location:before { content: '\eaa1'; }
+.codicon-goto-next-location:before { content: '\ea9a'; }
+.codicon-diff-review-insert:before { content: '\ea60'; }
+.codicon-diff-review-remove:before { content: '\eb3b'; }
+.codicon-diff-review-close:before { content: '\ea76'; }
+.codicon-parameter-hints-next:before { content: '\eab4'; }
+.codicon-parameter-hints-previous:before { content: '\eab7'; }
+.codicon-suggest-more-info:before { content: '\eab6'; }
+.codicon-diff-insert:before { content: '\ea60'; }
+.codicon-diff-remove:before { content: '\eb3b'; }
+.codicon-find-selection:before { content: '\eb85'; }
+.codicon-find-collapsed:before { content: '\eab6'; }
+.codicon-find-expanded:before { content: '\eab4'; }
+.codicon-find-replace:before { content: '\eb3d'; }
+.codicon-find-replace-all:before { content: '\eb3c'; }
+.codicon-find-previous-match:before { content: '\eaa1'; }
+.codicon-find-next-match:before { content: '\ea9a'; }
+.codicon-folding-expanded:before { content: '\eab4'; }
+.codicon-folding-collapsed:before { content: '\eab6'; }
+.codicon-marker-navigation-next:before { content: '\ea9a'; }
+.codicon-marker-navigation-previous:before { content: '\eaa1'; }
+.codicon-extensions-warning-message:before { content: '\ea6c'; }
+
+			.monaco-scrollable-element > .shadow.top {
+				box-shadow: #dddddd 0 6px 6px -6px inset;
+			}
+
+			.monaco-scrollable-element > .shadow.left {
+				box-shadow: #dddddd 6px 0 6px -6px inset;
+			}
+
+			.monaco-scrollable-element > .shadow.top.left {
+				box-shadow: #dddddd 6px 6px 6px -6px inset;
+			}
+		
+
+			.monaco-scrollable-element > .scrollbar > .slider {
+				background: rgba(100, 100, 100, 0.4);
+			}
+		
+
+			.monaco-scrollable-element > .scrollbar > .slider:hover {
+				background: rgba(100, 100, 100, 0.7);
+			}
+		
+
+			.monaco-scrollable-element > .scrollbar > .slider.active {
+				background: rgba(0, 0, 0, 0.6);
+			}
+		
+.monaco-editor .minimap-slider .minimap-slider-horizontal { background: rgba(100, 100, 100, 0.2); }
+.monaco-editor .minimap-slider:hover .minimap-slider-horizontal { background: rgba(100, 100, 100, 0.35); }
+.monaco-editor .minimap-slider.active .minimap-slider-horizontal { background: rgba(0, 0, 0, 0.3); }
+.monaco-editor .minimap-shadow-visible { box-shadow: #dddddd -6px 0 6px -6px inset; }
+.monaco-editor .scroll-decoration { box-shadow: #dddddd 0 6px 6px -6px inset; }
+.monaco-editor .focused .selected-text { background-color: #add6ff; }
+.monaco-editor .selected-text { background-color: #e5ebf1; }
+.monaco-editor, .monaco-editor-background, .monaco-editor .inputarea.ime-input { background-color: #fffffe; }
+.monaco-editor, .monaco-editor .inputarea.ime-input { color: #000000; }
+.monaco-editor .margin { background-color: #fffffe; }
+.monaco-editor .rangeHighlight { background-color: rgba(253, 255, 0, 0.2); }
+.monaco-editor .symbolHighlight { background-color: rgba(234, 92, 0, 0.33); }
+.monaco-editor .mtkw { color: rgba(51, 51, 51, 0.2) !important; }
+.monaco-editor .mtkz { color: rgba(51, 51, 51, 0.2) !important; }
+.monaco-editor .view-overlays .current-line { border: 2px solid #eeeeee; }
+.monaco-editor .margin-view-overlays .current-line-margin { border: 2px solid #eeeeee; }
+.monaco-editor .lines-content .core-guide-indent { box-shadow: 1px 0 0 0 #d3d3d3 inset; }
+.monaco-editor .lines-content .core-guide-indent-active { box-shadow: 1px 0 0 0 #939393 inset; }
+.monaco-editor .bracket-indent-guide.lvl-0 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-1 { --guide-color: rgba(49, 147, 49, 0.3); --guide-color-active: #319331; }
+.monaco-editor .bracket-indent-guide.lvl-2 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-3 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-4 { --guide-color: rgba(49, 147, 49, 0.3); --guide-color-active: #319331; }
+.monaco-editor .bracket-indent-guide.lvl-5 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-6 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-7 { --guide-color: rgba(49, 147, 49, 0.3); --guide-color-active: #319331; }
+.monaco-editor .bracket-indent-guide.lvl-8 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-9 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-10 { --guide-color: rgba(49, 147, 49, 0.3); --guide-color-active: #319331; }
+.monaco-editor .bracket-indent-guide.lvl-11 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-12 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-13 { --guide-color: rgba(49, 147, 49, 0.3); --guide-color-active: #319331; }
+.monaco-editor .bracket-indent-guide.lvl-14 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-15 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-16 { --guide-color: rgba(49, 147, 49, 0.3); --guide-color-active: #319331; }
+.monaco-editor .bracket-indent-guide.lvl-17 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-18 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-19 { --guide-color: rgba(49, 147, 49, 0.3); --guide-color-active: #319331; }
+.monaco-editor .bracket-indent-guide.lvl-20 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-21 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-22 { --guide-color: rgba(49, 147, 49, 0.3); --guide-color-active: #319331; }
+.monaco-editor .bracket-indent-guide.lvl-23 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-24 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-25 { --guide-color: rgba(49, 147, 49, 0.3); --guide-color-active: #319331; }
+.monaco-editor .bracket-indent-guide.lvl-26 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-27 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-28 { --guide-color: rgba(49, 147, 49, 0.3); --guide-color-active: #319331; }
+.monaco-editor .bracket-indent-guide.lvl-29 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .vertical { box-shadow: 1px 0 0 0 var(--guide-color) inset; }
+.monaco-editor .horizontal-top { border-top: 1px solid var(--guide-color); }
+.monaco-editor .horizontal-bottom { border-bottom: 1px solid var(--guide-color); }
+.monaco-editor .vertical.indent-active { box-shadow: 1px 0 0 0 var(--guide-color-active) inset; }
+.monaco-editor .horizontal-top.indent-active { border-top: 1px solid var(--guide-color-active); }
+.monaco-editor .horizontal-bottom.indent-active { border-bottom: 1px solid var(--guide-color-active); }
+.monaco-editor .line-numbers { color: #237893; }
+.monaco-editor .line-numbers.active-line-number { color: #0b216f; }
+.monaco-editor .view-ruler { box-shadow: 1px 0 0 0 #d3d3d3 inset; }
+.monaco-editor .inputarea.ime-input { caret-color: #000000; }
+.monaco-editor .cursors-layer .cursor { background-color: #000000; border-color: #000000; color: #ffffff; }
+.monaco-editor .unexpected-closing-bracket { color: rgba(255, 18, 18, 0.8); }
+.monaco-editor .bracket-highlighting-0 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-1 { color: #319331; }
+.monaco-editor .bracket-highlighting-2 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-3 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-4 { color: #319331; }
+.monaco-editor .bracket-highlighting-5 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-6 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-7 { color: #319331; }
+.monaco-editor .bracket-highlighting-8 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-9 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-10 { color: #319331; }
+.monaco-editor .bracket-highlighting-11 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-12 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-13 { color: #319331; }
+.monaco-editor .bracket-highlighting-14 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-15 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-16 { color: #319331; }
+.monaco-editor .bracket-highlighting-17 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-18 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-19 { color: #319331; }
+.monaco-editor .bracket-highlighting-20 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-21 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-22 { color: #319331; }
+.monaco-editor .bracket-highlighting-23 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-24 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-25 { color: #319331; }
+.monaco-editor .bracket-highlighting-26 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-27 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-28 { color: #319331; }
+.monaco-editor .bracket-highlighting-29 { color: #7b3814; }
+.monaco-editor .ghost-text-decoration { color: rgba(0, 0, 0, 0.47) !important; }
+.monaco-editor .ghost-text-decoration-preview { color: rgba(0, 0, 0, 0.47) !important; }
+.monaco-editor .suggest-preview-text .ghost-text { color: rgba(0, 0, 0, 0.47) !important; }
+.monaco-editor.vs .valueSetReplacement { outline: solid 2px #b9b9b9; }
+
+		.monaco-editor .contentWidgets .codicon.codicon-light-bulb {
+			color: #ddb100;
+			background-color: rgba(255, 255, 254, 0.7);
+		}
+
+		.monaco-editor .contentWidgets .codicon.codicon-lightbulb-autofix {
+			color: #007acc;
+			background-color: rgba(255, 255, 254, 0.7);
+		}
+.codicon.codicon-symbol-array { color: #616161; }
+.codicon.codicon-symbol-boolean { color: #616161; }
+.codicon.codicon-symbol-class { color: #d67e00; }
+.codicon.codicon-symbol-method { color: #652d90; }
+.codicon.codicon-symbol-color { color: #616161; }
+.codicon.codicon-symbol-constant { color: #616161; }
+.codicon.codicon-symbol-constructor { color: #652d90; }
+
+			.codicon.codicon-symbol-value,.codicon.codicon-symbol-enum { color: #d67e00; }
+.codicon.codicon-symbol-enum-member { color: #007acc; }
+.codicon.codicon-symbol-event { color: #d67e00; }
+.codicon.codicon-symbol-field { color: #007acc; }
+.codicon.codicon-symbol-file { color: #616161; }
+.codicon.codicon-symbol-folder { color: #616161; }
+.codicon.codicon-symbol-function { color: #652d90; }
+.codicon.codicon-symbol-interface { color: #007acc; }
+.codicon.codicon-symbol-key { color: #616161; }
+.codicon.codicon-symbol-keyword { color: #616161; }
+.codicon.codicon-symbol-module { color: #616161; }
+.codicon.codicon-symbol-namespace { color: #616161; }
+.codicon.codicon-symbol-null { color: #616161; }
+.codicon.codicon-symbol-number { color: #616161; }
+.codicon.codicon-symbol-object { color: #616161; }
+.codicon.codicon-symbol-operator { color: #616161; }
+.codicon.codicon-symbol-package { color: #616161; }
+.codicon.codicon-symbol-property { color: #616161; }
+.codicon.codicon-symbol-reference { color: #616161; }
+.codicon.codicon-symbol-snippet { color: #616161; }
+.codicon.codicon-symbol-string { color: #616161; }
+.codicon.codicon-symbol-struct { color: #616161; }
+.codicon.codicon-symbol-text { color: #616161; }
+.codicon.codicon-symbol-type-parameter { color: #616161; }
+.codicon.codicon-symbol-unit { color: #616161; }
+.codicon.codicon-symbol-variable { color: #007acc; }
+.monaco-editor .accessibilityHelpWidget { background-color: #f3f3f3; }
+.monaco-editor .accessibilityHelpWidget { color: #616161; }
+.monaco-editor .accessibilityHelpWidget { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16); }
+.monaco-editor .tokens-inspect-widget { border: 1px solid #c8c8c8; }
+.monaco-editor .tokens-inspect-widget .tokens-inspect-separator { background-color: #c8c8c8; }
+.monaco-editor .tokens-inspect-widget { background-color: #f3f3f3; }
+.monaco-editor .tokens-inspect-widget { color: #616161; }
+.monaco-link { color: #006ab1; }
+.monaco-link:hover { color: #006ab1; }
+
+			.monaco-editor .zone-widget .codicon.codicon-error,
+			.markers-panel .marker-icon.codicon.codicon-error,
+			.text-search-provider-messages .providerMessage .codicon.codicon-error,
+			.extensions-viewlet > .extensions .codicon.codicon-error {
+				color: #e51400;
+			}
+		
+
+			.monaco-editor .zone-widget .codicon.codicon-warning,
+			.markers-panel .marker-icon.codicon.codicon-warning,
+			.extensions-viewlet > .extensions .codicon.codicon-warning,
+			.extension-editor .codicon.codicon-warning,
+			.text-search-provider-messages .providerMessage .codicon.codicon-warning,
+			.preferences-editor .codicon.codicon-warning {
+				color: #bf8803;
+			}
+		
+
+			.monaco-editor .zone-widget .codicon.codicon-info,
+			.markers-panel .marker-icon.codicon.codicon-info,
+			.extensions-viewlet > .extensions .codicon.codicon-info,
+			.text-search-provider-messages .providerMessage .codicon.codicon-info,
+			.extension-editor .codicon.codicon-info {
+				color: #1a85ff;
+			}
+		
+.monaco-editor .squiggly-error { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206%203'%20enable-background%3D'new%200%200%206%203'%20height%3D'3'%20width%3D'6'%3E%3Cg%20fill%3D'%23e51400'%3E%3Cpolygon%20points%3D'5.5%2C0%202.5%2C3%201.1%2C3%204.1%2C0'%2F%3E%3Cpolygon%20points%3D'4%2C0%206%2C2%206%2C0.6%205.4%2C0'%2F%3E%3Cpolygon%20points%3D'0%2C2%201%2C3%202.4%2C3%200%2C0.6'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x bottom left; }
+.monaco-editor .squiggly-warning { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206%203'%20enable-background%3D'new%200%200%206%203'%20height%3D'3'%20width%3D'6'%3E%3Cg%20fill%3D'%23bf8803'%3E%3Cpolygon%20points%3D'5.5%2C0%202.5%2C3%201.1%2C3%204.1%2C0'%2F%3E%3Cpolygon%20points%3D'4%2C0%206%2C2%206%2C0.6%205.4%2C0'%2F%3E%3Cpolygon%20points%3D'0%2C2%201%2C3%202.4%2C3%200%2C0.6'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x bottom left; }
+.monaco-editor .squiggly-info { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206%203'%20enable-background%3D'new%200%200%206%203'%20height%3D'3'%20width%3D'6'%3E%3Cg%20fill%3D'%231a85ff'%3E%3Cpolygon%20points%3D'5.5%2C0%202.5%2C3%201.1%2C3%204.1%2C0'%2F%3E%3Cpolygon%20points%3D'4%2C0%206%2C2%206%2C0.6%205.4%2C0'%2F%3E%3Cpolygon%20points%3D'0%2C2%201%2C3%202.4%2C3%200%2C0.6'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x bottom left; }
+.monaco-editor .squiggly-hint { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%223%22%20width%3D%2212%22%3E%3Cg%20fill%3D%22%236c6c6c%22%3E%3Ccircle%20cx%3D%221%22%20cy%3D%221%22%20r%3D%221%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%221%22%20r%3D%221%22%2F%3E%3Ccircle%20cx%3D%229%22%20cy%3D%221%22%20r%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") no-repeat bottom left; }
+.monaco-editor.showUnused .squiggly-inline-unnecessary { opacity: 0.467; }
+.monaco-editor.showDeprecated .squiggly-inline-deprecated { text-decoration: line-through; text-decoration-color: #000000}
+.monaco-editor .bracket-match { background-color: rgba(0, 100, 0, 0.1); }
+.monaco-editor .bracket-match { border: 1px solid #b9b9b9; }
+.monaco-editor .findOptionsWidget { background-color: #f3f3f3; }
+.monaco-editor .findOptionsWidget { color: #616161; }
+.monaco-editor .findOptionsWidget { box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.16); }
+.monaco-editor .linked-editing-decoration { background: rgba(255, 0, 0, 0.3); border-left-color: rgba(255, 0, 0, 0.3); }
+.monaco-editor .detected-link-active { color: #0000ff !important; }
+.monaco-editor .focused .selectionHighlight { background-color: rgba(173, 214, 255, 0.3); }
+.monaco-editor .selectionHighlight { background-color: rgba(173, 214, 255, 0.15); }
+.monaco-editor .wordHighlight { background-color: rgba(87, 87, 87, 0.25); }
+.monaco-editor .wordHighlightStrong { background-color: rgba(14, 99, 156, 0.25); }
+.monaco-editor .goto-definition-link { color: #0000ff !important; }
+.monaco-diff-editor .diff-review-line-number { color: #237893; }
+.monaco-diff-editor .diff-review-shadow { box-shadow: #dddddd 0 -6px 6px -6px inset; }
+.monaco-editor .parameter-hints-widget { border: 1px solid #c8c8c8; }
+.monaco-editor .parameter-hints-widget.multiple .body { border-left: 1px solid rgba(200, 200, 200, 0.5); }
+.monaco-editor .parameter-hints-widget .signature.has-docs { border-bottom: 1px solid rgba(200, 200, 200, 0.5); }
+.monaco-editor .parameter-hints-widget { background-color: #f3f3f3; }
+.monaco-editor .parameter-hints-widget a { color: #006ab1; }
+.monaco-editor .parameter-hints-widget a:hover { color: #006ab1; }
+.monaco-editor .parameter-hints-widget { color: #616161; }
+.monaco-editor .parameter-hints-widget code { background-color: rgba(220, 220, 220, 0.4); }
+.monaco-editor .parameter-hints-widget .parameter.active { color: #0066bf}
+.monaco-editor .char-insert, .monaco-diff-editor .char-insert { background-color: rgba(155, 185, 85, 0.2); }
+.monaco-editor .line-insert, .monaco-diff-editor .line-insert { background-color: rgba(155, 185, 85, 0.2); }
+.monaco-editor .inline-added-margin-view-zone { background-color: rgba(155, 185, 85, 0.2); }
+.monaco-editor .gutter-insert, .monaco-diff-editor .gutter-insert { background-color: rgba(155, 185, 85, 0.2); }
+.monaco-editor .char-delete, .monaco-diff-editor .char-delete { background-color: rgba(255, 0, 0, 0.2); }
+.monaco-editor .line-delete, .monaco-diff-editor .line-delete { background-color: rgba(255, 0, 0, 0.2); }
+.monaco-editor .inline-deleted-margin-view-zone { background-color: rgba(255, 0, 0, 0.2); }
+.monaco-editor .gutter-delete, .monaco-diff-editor .gutter-delete { background-color: rgba(255, 0, 0, 0.2); }
+.monaco-diff-editor.side-by-side .editor.modified { box-shadow: -6px 0 5px -5px #dddddd; }
+
+			.monaco-diff-editor .diffViewport {
+				background: rgba(100, 100, 100, 0.4);
+			}
+		
+
+			.monaco-diff-editor .diffViewport:hover {
+				background: rgba(100, 100, 100, 0.7);
+			}
+		
+
+			.monaco-diff-editor .diffViewport:active {
+				background: rgba(0, 0, 0, 0.6);
+			}
+		
+
+	.monaco-editor .diagonal-fill {
+		background-image: linear-gradient(
+			-45deg,
+			rgba(34, 34, 34, 0.2) 12.5%,
+			#0000 12.5%, #0000 50%,
+			rgba(34, 34, 34, 0.2) 50%, rgba(34, 34, 34, 0.2) 62.5%,
+			#0000 62.5%, #0000 100%
+		);
+		background-size: 8px 8px;
+	}
+	
+.monaco-editor .findMatch { background-color: rgba(234, 92, 0, 0.33); }
+.monaco-editor .currentFindMatch { background-color: #a8ac94; }
+.monaco-editor .findScope { background-color: rgba(180, 180, 180, 0.3); }
+.monaco-editor .find-widget { background-color: #f3f3f3; }
+.monaco-editor .find-widget { box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.16); }
+.monaco-editor .find-widget { color: #616161; }
+.monaco-editor .find-widget.no-results .matchesCount { color: #a1260d; }
+.monaco-editor .find-widget .monaco-sash { background-color: #c8c8c8; }
+
+		.monaco-editor .find-widget .button:not(.disabled):hover,
+		.monaco-editor .find-widget .codicon-find-selection:hover {
+			background-color: rgba(184, 184, 184, 0.31) !important;
+		}
+	
+.monaco-editor .find-widget .monaco-inputbox.synthetic-focus { outline-color: #0090f1; }
+.monaco-editor .folded-background { background-color: rgba(173, 214, 255, 0.3); }
+
+		.monaco-editor .cldr.codicon.codicon-folding-expanded,
+		.monaco-editor .cldr.codicon.codicon-folding-collapsed {
+			color: #424242 !important;
+		}
+		
+.monaco-hover .hover-contents a.code-link span { color: #006ab1; }
+.monaco-hover .hover-contents a.code-link span:hover { color: #006ab1; }
+.monaco-editor .hoverHighlight { background-color: rgba(173, 214, 255, 0.15); }
+.monaco-editor .monaco-hover { background-color: #f3f3f3; }
+.monaco-editor .monaco-hover { border: 1px solid #c8c8c8; }
+.monaco-editor .monaco-hover .hover-row:not(:first-child):not(:empty) { border-top: 1px solid rgba(200, 200, 200, 0.5); }
+.monaco-editor .monaco-hover hr { border-top: 1px solid rgba(200, 200, 200, 0.5); }
+.monaco-editor .monaco-hover hr { border-bottom: 0px solid rgba(200, 200, 200, 0.5); }
+.monaco-editor .monaco-hover a { color: #006ab1; }
+.monaco-editor .monaco-hover a:hover { color: #006ab1; }
+.monaco-editor .monaco-hover { color: #616161; }
+.monaco-editor .monaco-hover .hover-row .actions { background-color: #e7e7e7; }
+.monaco-editor .monaco-hover code { background-color: rgba(220, 220, 220, 0.4); }
+.monaco-editor { --vscode-foreground: #616161;
+--vscode-errorForeground: #a1260d;
+--vscode-descriptionForeground: #717171;
+--vscode-icon-foreground: #424242;
+--vscode-focusBorder: #0090f1;
+--vscode-textSeparator-foreground: rgba(0, 0, 0, 0.18);
+--vscode-textLink-foreground: #006ab1;
+--vscode-textLink-activeForeground: #006ab1;
+--vscode-textPreformat-foreground: #a31515;
+--vscode-textBlockQuote-background: rgba(127, 127, 127, 0.1);
+--vscode-textBlockQuote-border: rgba(0, 122, 204, 0.5);
+--vscode-textCodeBlock-background: rgba(220, 220, 220, 0.4);
+--vscode-widget-shadow: rgba(0, 0, 0, 0.16);
+--vscode-input-background: #ffffff;
+--vscode-input-foreground: #616161;
+--vscode-inputOption-activeBorder: rgba(0, 122, 204, 0);
+--vscode-inputOption-hoverBackground: rgba(184, 184, 184, 0.31);
+--vscode-inputOption-activeBackground: rgba(0, 144, 241, 0.2);
+--vscode-inputOption-activeForeground: #000000;
+--vscode-input-placeholderForeground: rgba(97, 97, 97, 0.5);
+--vscode-inputValidation-infoBackground: #d6ecf2;
+--vscode-inputValidation-infoBorder: #007acc;
+--vscode-inputValidation-warningBackground: #f6f5d2;
+--vscode-inputValidation-warningBorder: #b89500;
+--vscode-inputValidation-errorBackground: #f2dede;
+--vscode-inputValidation-errorBorder: #be1100;
+--vscode-dropdown-background: #ffffff;
+--vscode-dropdown-border: #cecece;
+--vscode-checkbox-background: #ffffff;
+--vscode-checkbox-border: #cecece;
+--vscode-button-foreground: #ffffff;
+--vscode-button-background: #007acc;
+--vscode-button-hoverBackground: #0062a3;
+--vscode-button-secondaryForeground: #ffffff;
+--vscode-button-secondaryBackground: #5f6a79;
+--vscode-button-secondaryHoverBackground: #4c5561;
+--vscode-badge-background: #c4c4c4;
+--vscode-badge-foreground: #333333;
+--vscode-scrollbar-shadow: #dddddd;
+--vscode-scrollbarSlider-background: rgba(100, 100, 100, 0.4);
+--vscode-scrollbarSlider-hoverBackground: rgba(100, 100, 100, 0.7);
+--vscode-scrollbarSlider-activeBackground: rgba(0, 0, 0, 0.6);
+--vscode-progressBar-background: #0e70c0;
+--vscode-editorError-foreground: #e51400;
+--vscode-editorWarning-foreground: #bf8803;
+--vscode-editorInfo-foreground: #1a85ff;
+--vscode-editorHint-foreground: #6c6c6c;
+--vscode-sash-hoverBorder: #0090f1;
+--vscode-editor-background: #fffffe;
+--vscode-editor-foreground: #000000;
+--vscode-editorWidget-background: #f3f3f3;
+--vscode-editorWidget-foreground: #616161;
+--vscode-editorWidget-border: #c8c8c8;
+--vscode-quickInput-background: #f3f3f3;
+--vscode-quickInput-foreground: #616161;
+--vscode-quickInputTitle-background: rgba(0, 0, 0, 0.06);
+--vscode-pickerGroup-foreground: #0066bf;
+--vscode-pickerGroup-border: #cccedb;
+--vscode-keybindingLabel-background: rgba(221, 221, 221, 0.4);
+--vscode-keybindingLabel-foreground: #555555;
+--vscode-keybindingLabel-border: rgba(204, 204, 204, 0.4);
+--vscode-keybindingLabel-bottomBorder: rgba(187, 187, 187, 0.4);
+--vscode-editor-selectionBackground: #add6ff;
+--vscode-editor-inactiveSelectionBackground: #e5ebf1;
+--vscode-editor-selectionHighlightBackground: rgba(173, 214, 255, 0.3);
+--vscode-editor-findMatchBackground: #a8ac94;
+--vscode-editor-findMatchHighlightBackground: rgba(234, 92, 0, 0.33);
+--vscode-editor-findRangeHighlightBackground: rgba(180, 180, 180, 0.3);
+--vscode-searchEditor-findMatchBackground: rgba(234, 92, 0, 0.22);
+--vscode-editor-hoverHighlightBackground: rgba(173, 214, 255, 0.15);
+--vscode-editorHoverWidget-background: #f3f3f3;
+--vscode-editorHoverWidget-foreground: #616161;
+--vscode-editorHoverWidget-border: #c8c8c8;
+--vscode-editorHoverWidget-statusBarBackground: #e7e7e7;
+--vscode-editorLink-activeForeground: #0000ff;
+--vscode-editorInlayHint-foreground: rgba(51, 51, 51, 0.8);
+--vscode-editorInlayHint-background: rgba(196, 196, 196, 0.3);
+--vscode-editorInlayHint-typeForeground: rgba(51, 51, 51, 0.8);
+--vscode-editorInlayHint-typeBackground: rgba(196, 196, 196, 0.3);
+--vscode-editorInlayHint-parameterForeground: rgba(51, 51, 51, 0.8);
+--vscode-editorInlayHint-parameterBackground: rgba(196, 196, 196, 0.3);
+--vscode-editorLightBulb-foreground: #ddb100;
+--vscode-editorLightBulbAutoFix-foreground: #007acc;
+--vscode-diffEditor-insertedTextBackground: rgba(155, 185, 85, 0.2);
+--vscode-diffEditor-removedTextBackground: rgba(255, 0, 0, 0.2);
+--vscode-diffEditor-diagonalFill: rgba(34, 34, 34, 0.2);
+--vscode-list-focusOutline: #0090f1;
+--vscode-list-activeSelectionBackground: #0060c0;
+--vscode-list-activeSelectionForeground: #ffffff;
+--vscode-list-inactiveSelectionBackground: #e4e6f1;
+--vscode-list-hoverBackground: #f0f0f0;
+--vscode-list-dropBackground: #d6ebff;
+--vscode-list-highlightForeground: #0066bf;
+--vscode-list-focusHighlightForeground: #9dddff;
+--vscode-list-invalidItemForeground: #b89500;
+--vscode-list-errorForeground: #b01011;
+--vscode-list-warningForeground: #855f00;
+--vscode-listFilterWidget-background: #efc1ad;
+--vscode-listFilterWidget-outline: rgba(0, 0, 0, 0);
+--vscode-listFilterWidget-noMatchesOutline: #be1100;
+--vscode-list-filterMatchBackground: rgba(234, 92, 0, 0.33);
+--vscode-tree-indentGuidesStroke: #a9a9a9;
+--vscode-tree-tableColumnsBorder: rgba(97, 97, 97, 0.13);
+--vscode-tree-tableOddRowsBackground: rgba(97, 97, 97, 0.04);
+--vscode-list-deemphasizedForeground: #8e8e90;
+--vscode-quickInputList-focusForeground: #ffffff;
+--vscode-quickInputList-focusBackground: #0060c0;
+--vscode-menu-foreground: #616161;
+--vscode-menu-background: #ffffff;
+--vscode-menu-selectionForeground: #ffffff;
+--vscode-menu-selectionBackground: #0060c0;
+--vscode-menu-separatorBackground: #888888;
+--vscode-toolbar-hoverBackground: rgba(184, 184, 184, 0.31);
+--vscode-toolbar-activeBackground: rgba(166, 166, 166, 0.31);
+--vscode-editor-snippetTabstopHighlightBackground: rgba(10, 50, 100, 0.2);
+--vscode-editor-snippetFinalTabstopHighlightBorder: rgba(10, 50, 100, 0.5);
+--vscode-breadcrumb-foreground: rgba(97, 97, 97, 0.8);
+--vscode-breadcrumb-background: #fffffe;
+--vscode-breadcrumb-focusForeground: #4e4e4e;
+--vscode-breadcrumb-activeSelectionForeground: #4e4e4e;
+--vscode-breadcrumbPicker-background: #f3f3f3;
+--vscode-merge-currentHeaderBackground: rgba(64, 200, 174, 0.5);
+--vscode-merge-currentContentBackground: rgba(64, 200, 174, 0.2);
+--vscode-merge-incomingHeaderBackground: rgba(64, 166, 255, 0.5);
+--vscode-merge-incomingContentBackground: rgba(64, 166, 255, 0.2);
+--vscode-merge-commonHeaderBackground: rgba(96, 96, 96, 0.4);
+--vscode-merge-commonContentBackground: rgba(96, 96, 96, 0.16);
+--vscode-editorOverviewRuler-currentContentForeground: rgba(64, 200, 174, 0.5);
+--vscode-editorOverviewRuler-incomingContentForeground: rgba(64, 166, 255, 0.5);
+--vscode-editorOverviewRuler-commonContentForeground: rgba(96, 96, 96, 0.4);
+--vscode-editorOverviewRuler-findMatchForeground: rgba(209, 134, 22, 0.49);
+--vscode-editorOverviewRuler-selectionHighlightForeground: rgba(160, 160, 160, 0.8);
+--vscode-minimap-findMatchHighlight: #d18616;
+--vscode-minimap-selectionOccurrenceHighlight: #c9c9c9;
+--vscode-minimap-selectionHighlight: #add6ff;
+--vscode-minimap-errorHighlight: rgba(255, 18, 18, 0.7);
+--vscode-minimap-warningHighlight: #bf8803;
+--vscode-minimap-foregroundOpacity: #000000;
+--vscode-minimapSlider-background: rgba(100, 100, 100, 0.2);
+--vscode-minimapSlider-hoverBackground: rgba(100, 100, 100, 0.35);
+--vscode-minimapSlider-activeBackground: rgba(0, 0, 0, 0.3);
+--vscode-problemsErrorIcon-foreground: #e51400;
+--vscode-problemsWarningIcon-foreground: #bf8803;
+--vscode-problemsInfoIcon-foreground: #1a85ff;
+--vscode-charts-foreground: #616161;
+--vscode-charts-lines: rgba(97, 97, 97, 0.5);
+--vscode-charts-red: #e51400;
+--vscode-charts-blue: #1a85ff;
+--vscode-charts-yellow: #bf8803;
+--vscode-charts-orange: #d18616;
+--vscode-charts-green: #388a34;
+--vscode-charts-purple: #652d90;
+--vscode-editor-lineHighlightBorder: #eeeeee;
+--vscode-editor-rangeHighlightBackground: rgba(253, 255, 0, 0.2);
+--vscode-editor-symbolHighlightBackground: rgba(234, 92, 0, 0.33);
+--vscode-editorCursor-foreground: #000000;
+--vscode-editorWhitespace-foreground: rgba(51, 51, 51, 0.2);
+--vscode-editorIndentGuide-background: #d3d3d3;
+--vscode-editorIndentGuide-activeBackground: #939393;
+--vscode-editorLineNumber-foreground: #237893;
+--vscode-editorActiveLineNumber-foreground: #0b216f;
+--vscode-editorLineNumber-activeForeground: #0b216f;
+--vscode-editorRuler-foreground: #d3d3d3;
+--vscode-editorCodeLens-foreground: #919191;
+--vscode-editorBracketMatch-background: rgba(0, 100, 0, 0.1);
+--vscode-editorBracketMatch-border: #b9b9b9;
+--vscode-editorOverviewRuler-border: rgba(127, 127, 127, 0.3);
+--vscode-editorGutter-background: #fffffe;
+--vscode-editorUnnecessaryCode-opacity: rgba(0, 0, 0, 0.47);
+--vscode-editorGhostText-foreground: rgba(0, 0, 0, 0.47);
+--vscode-editorOverviewRuler-rangeHighlightForeground: rgba(0, 122, 204, 0.6);
+--vscode-editorOverviewRuler-errorForeground: rgba(255, 18, 18, 0.7);
+--vscode-editorOverviewRuler-warningForeground: #bf8803;
+--vscode-editorOverviewRuler-infoForeground: #1a85ff;
+--vscode-editorBracketHighlight-foreground1: #0431fa;
+--vscode-editorBracketHighlight-foreground2: #319331;
+--vscode-editorBracketHighlight-foreground3: #7b3814;
+--vscode-editorBracketHighlight-foreground4: rgba(0, 0, 0, 0);
+--vscode-editorBracketHighlight-foreground5: rgba(0, 0, 0, 0);
+--vscode-editorBracketHighlight-foreground6: rgba(0, 0, 0, 0);
+--vscode-editorBracketHighlight-unexpectedBracket-foreground: rgba(255, 18, 18, 0.8);
+--vscode-editorBracketPairGuide-background1: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-background2: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-background3: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-background4: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-background5: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-background6: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground1: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground2: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground3: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground4: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground5: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground6: rgba(0, 0, 0, 0);
+--vscode-editorUnicodeHighlight-border: #cea33d;
+--vscode-symbolIcon-arrayForeground: #616161;
+--vscode-symbolIcon-booleanForeground: #616161;
+--vscode-symbolIcon-classForeground: #d67e00;
+--vscode-symbolIcon-colorForeground: #616161;
+--vscode-symbolIcon-constantForeground: #616161;
+--vscode-symbolIcon-constructorForeground: #652d90;
+--vscode-symbolIcon-enumeratorForeground: #d67e00;
+--vscode-symbolIcon-enumeratorMemberForeground: #007acc;
+--vscode-symbolIcon-eventForeground: #d67e00;
+--vscode-symbolIcon-fieldForeground: #007acc;
+--vscode-symbolIcon-fileForeground: #616161;
+--vscode-symbolIcon-folderForeground: #616161;
+--vscode-symbolIcon-functionForeground: #652d90;
+--vscode-symbolIcon-interfaceForeground: #007acc;
+--vscode-symbolIcon-keyForeground: #616161;
+--vscode-symbolIcon-keywordForeground: #616161;
+--vscode-symbolIcon-methodForeground: #652d90;
+--vscode-symbolIcon-moduleForeground: #616161;
+--vscode-symbolIcon-namespaceForeground: #616161;
+--vscode-symbolIcon-nullForeground: #616161;
+--vscode-symbolIcon-numberForeground: #616161;
+--vscode-symbolIcon-objectForeground: #616161;
+--vscode-symbolIcon-operatorForeground: #616161;
+--vscode-symbolIcon-packageForeground: #616161;
+--vscode-symbolIcon-propertyForeground: #616161;
+--vscode-symbolIcon-referenceForeground: #616161;
+--vscode-symbolIcon-snippetForeground: #616161;
+--vscode-symbolIcon-stringForeground: #616161;
+--vscode-symbolIcon-structForeground: #616161;
+--vscode-symbolIcon-textForeground: #616161;
+--vscode-symbolIcon-typeParameterForeground: #616161;
+--vscode-symbolIcon-unitForeground: #616161;
+--vscode-symbolIcon-variableForeground: #007acc;
+--vscode-editorOverviewRuler-bracketMatchForeground: #a0a0a0;
+--vscode-editor-linkedEditingBackground: rgba(255, 0, 0, 0.3);
+--vscode-editor-wordHighlightBackground: rgba(87, 87, 87, 0.25);
+--vscode-editor-wordHighlightStrongBackground: rgba(14, 99, 156, 0.25);
+--vscode-editorOverviewRuler-wordHighlightForeground: rgba(160, 160, 160, 0.8);
+--vscode-editorOverviewRuler-wordHighlightStrongForeground: rgba(192, 160, 192, 0.8);
+--vscode-peekViewTitle-background: rgba(26, 133, 255, 0.1);
+--vscode-peekViewTitleLabel-foreground: #000000;
+--vscode-peekViewTitleDescription-foreground: #616161;
+--vscode-peekView-border: #1a85ff;
+--vscode-peekViewResult-background: #f3f3f3;
+--vscode-peekViewResult-lineForeground: #646465;
+--vscode-peekViewResult-fileForeground: #1e1e1e;
+--vscode-peekViewResult-selectionBackground: rgba(51, 153, 255, 0.2);
+--vscode-peekViewResult-selectionForeground: #6c6c6c;
+--vscode-peekViewEditor-background: #f2f8fc;
+--vscode-peekViewEditorGutter-background: #f2f8fc;
+--vscode-peekViewResult-matchHighlightBackground: rgba(234, 92, 0, 0.3);
+--vscode-peekViewEditor-matchHighlightBackground: rgba(245, 216, 2, 0.87);
+--vscode-editorMarkerNavigationError-background: #e51400;
+--vscode-editorMarkerNavigationError-headerBackground: rgba(229, 20, 0, 0.1);
+--vscode-editorMarkerNavigationWarning-background: #bf8803;
+--vscode-editorMarkerNavigationWarning-headerBackground: rgba(191, 136, 3, 0.1);
+--vscode-editorMarkerNavigationInfo-background: #1a85ff;
+--vscode-editorMarkerNavigationInfo-headerBackground: rgba(26, 133, 255, 0.1);
+--vscode-editorMarkerNavigation-background: #fffffe;
+--vscode-editorHoverWidget-highlightForeground: #0066bf;
+--vscode-editorSuggestWidget-background: #f3f3f3;
+--vscode-editorSuggestWidget-border: #c8c8c8;
+--vscode-editorSuggestWidget-foreground: #000000;
+--vscode-editorSuggestWidget-selectedForeground: #ffffff;
+--vscode-editorSuggestWidget-selectedBackground: #0060c0;
+--vscode-editorSuggestWidget-highlightForeground: #0066bf;
+--vscode-editorSuggestWidget-focusHighlightForeground: #9dddff;
+--vscode-editorSuggestWidgetStatus-foreground: rgba(0, 0, 0, 0.5);
+--vscode-editor-foldBackground: rgba(173, 214, 255, 0.3);
+--vscode-editorGutter-foldingControlForeground: #424242; }
+
+.mtk1 { color: #000000; }
+.mtk2 { color: #fffffe; }
+.mtk3 { color: #808080; }
+.mtk4 { color: #ff0000; }
+.mtk5 { color: #0451a5; }
+.mtk6 { color: #0000ff; }
+.mtk7 { color: #098658; }
+.mtk8 { color: #008000; }
+.mtk9 { color: #dd0000; }
+.mtk10 { color: #383838; }
+.mtk11 { color: #cd3131; }
+.mtk12 { color: #863b00; }
+.mtk13 { color: #af00db; }
+.mtk14 { color: #800000; }
+.mtk15 { color: #e00000; }
+.mtk16 { color: #3030c0; }
+.mtk17 { color: #666666; }
+.mtk18 { color: #778899; }
+.mtk19 { color: #c700c7; }
+.mtk20 { color: #a31515; }
+.mtk21 { color: #4f76ac; }
+.mtk22 { color: #008080; }
+.mtk23 { color: #001188; }
+.mtk24 { color: #4864aa; }
+.mtki { font-style: italic; }
+.mtkb { font-weight: bold; }
+.mtku { text-decoration: underline; text-underline-position: under; }
+.mtks { text-decoration: line-through; }
+.mtks.mtku { text-decoration: underline line-through; text-underline-position: under; }</style><style type="text/css" media="screen">
+		.monaco-editor .codelens-decoration._ee1f61 { line-height: 19px; font-size: 12px; padding-right: 6px; font-feature-settings: var(--codelens-font-features_ee1f61) }
+		.monaco-editor .codelens-decoration._ee1f61 span.codicon { line-height: 19px; font-size: 12px; }
+		</style></head><body class="d-flex flex-column x-h-md-100"><header class="container-fluid"><div class="navbar navbar-expand-md navbar-light"><a class="navbar-brand me-md-4" href="https://ru.code-basics.com/"><img width="30" alt="Code Basics logo" src="./25_files/logo-ed6f820005fd40a9a48f5eaf741afdf00da9844a49ce2dfcbf0de572bd6a589c.png" loading="lazy"></a><button aria-controls="navbarToggler" aria-expanded="false" aria-label="Переключить навигацию" class="navbar-toggler" data-bs-target="#navbarToggler" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarToggler"><ul class="nav nav-pills flex-grow-1 navbar-nav"><li class="nav-item dropdown me-md-4"><button aria-expanded="false" aria-haspopup="true" class="nav-link text-dark dropdown-toggle" data-bs-toggle="dropdown" href="#">Выберите курс</button><ul class="dropdown-menu dropdown-menu-columns dropdown-menu-arrow"><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/racket"><span class="colored me-2 fs-5 devicon-devicon-plain"></span><span>Racket</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/php"><span class="colored me-2 fs-5 devicon-php-plain"></span><span>PHP</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/javascript"><span class="colored me-2 fs-5 devicon-javascript-plain"></span><span>JavaScript</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/clojure"><span class="colored me-2 fs-5 devicon-clojure-plain"></span><span>Clojure</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/html"><span class="colored me-2 fs-5 devicon-html5-plain"></span><span>HTML</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/java"><span class="colored me-2 fs-5 devicon-java-plain"></span><span>Java</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/python"><span class="colored me-2 fs-5 devicon-python-plain"></span><span>Python</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/fortran"><span class="colored me-2 fs-5 devicon-devicon-plain"></span><span>Fortran</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/typescript"><span class="colored me-2 fs-5 devicon-typescript-plain"></span><span>TypeScript</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/elixir"><span class="colored me-2 fs-5 devicon-elixir-plain"></span><span>Elixir</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/lua"><span class="colored me-2 fs-5 devicon-lua-plain"></span><span>Lua</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/haskell"><span class="colored me-2 fs-5 devicon-haskell-plain"></span><span>Haskell</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/bash"><span class="colored me-2 fs-5 devicon-bash-plain"></span><span>Bash</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/clang"><span class="colored me-2 fs-5 devicon-c-plain"></span><span>C</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/go"><span class="colored me-2 fs-5 devicon-go-plain"></span><span>Go</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/kotlin"><span class="colored me-2 fs-5 devicon-kotlin-plain"></span><span>Kotlin</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/cpp"><span class="colored me-2 fs-5 devicon-cplusplus-plain"></span><span>C++</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/css"><span class="colored me-2 fs-5 devicon-css3-plain"></span><span>CSS</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/csharp"><span class="colored me-2 fs-5 devicon-csharp-plain"></span><span>C#</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/rust"><span class="colored me-2 fs-5 devicon-rust-plain"></span><span>Rust</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/swift"><span class="colored me-2 fs-5 devicon-swift-plain"></span><span>Swift</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/prolog"><span class="colored me-2 fs-5 devicon-devicon-plain"></span><span>Prolog</span></a></li><li><a class="dropdown-item d-flex align-items-center py-2" href="https://ru.code-basics.com/languages/ruby"><span class="colored me-2 fs-5 devicon-ruby-plain"></span><span>Ruby</span></a></li></ul></li><li class="nav-item dropdown me-2 me-auto"><a class="nav-link text-dark" target="_blank" rel="nofollow noopener" href="https://ru.hexlet.io/blog/categories/success?utm_source=code-basics&amp;utm_campaign=hexlet-success&amp;utm_medium=referral&amp;roistat_visit=4344400">Истории успеха</a></li><li class="nav-item dropdown me-2"><button aria-expanded="false" aria-haspopup="true" class="nav-link text-dark dropdown-toggle" data-bs-toggle="dropdown" href="#"><span class="bi bi-person-circle"></span></button><ul class="dropdown-menu dropdown-menu-end"><li class="dropdown-item-text d-flex align-items-center"><div class="flex-shrink-0 me-2"><img width="50" height="50" alt="User Avatar" class="rounded-circle" src="./25_files/user-avatar-1eda11bdb689629376c234ff880deae30df6d8cc0204f192c8b32a644f480d04.png" loading="lazy"></div><div><div class="fw-bold"></div><div>viacheslav14rus@gmail.com</div></div></li><div class="dropdown-divider"></div><li><a class="dropdown-item" href="https://ru.code-basics.com/account/profile/edit">Настройки</a></li><div class="dropdown-divider"></div><li><a class="dropdown-item" rel="nofollow" data-method="delete" href="https://ru.code-basics.com/session">Выйти</a></li></ul></li><li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link text-dark dropdown-toggle" data-bs-toggle="dropdown" href="https://ru.code-basics.com/languages/php/lessons/concatenation#"><span class="me-2">RU</span></a><ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item d-flex" href="https://ru.code-basics.com/locale/switch?locale=en"><img width="25" alt="switch language to en" class="my-auto me-2" src="./25_files/flag-en-f0b48c6562bb27879fbd685ece0133271ea043384dd9793843c246f862ac7cc1.svg" loading="lazy"><span class="my-auto">Английский</span></a></li></ul></li></ul></div></div></header><main class="container-fluid overflow-hidden mb-1 x-h-md-100"><div class="row x-h-md-100 g-2"><div class="col-12 col-md-6 col-lg-5 x-h-md-100 mb-3 mb-md-0 position-relative"><div class="card x-h-md-100"><ul class="nav nav-tabs justify-content-center small" data-bs-toggle="tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active border-top-0 rounded-0 text-muted" data-bs-toggle="tab" href="https://ru.code-basics.com/languages/php/lessons/concatenation#lesson-tab" role="tab" aria-selected="true">Урок</a></li><li class="nav-item" role="presentation"><a class="nav-link border-top-0 rounded-0 text-muted" data-bs-toggle="tab" href="https://ru.code-basics.com/languages/php/lessons/concatenation#discuss-tab" role="tab" aria-selected="false" tabindex="-1">Обсуждение</a></li></ul><div class="tab-content overflow-hidden x-h-md-100"><div class="tab-pane fade overflow-auto x-h-md-100 active show" id="lesson-tab" role="tabpanel"><div class="card-body"><nav aria-label="Хлебные крошки"><ol class="breadcrumb mb-2" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumb-item" itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem"><a title="Домой" itemprop="item" href="https://ru.code-basics.com/"><span class="bi bi-house text-muted"></span><meta content="1" itemprop="position"><meta content="CodeBasics" itemprop="name"></a></li><li class="breadcrumb-item" itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem"><a itemprop="item" class="text-decoration-none text-muted" href="https://ru.code-basics.com/languages/php"><span itemprop="name">PHP</span><meta content="2" itemprop="position"></a></li><li aria-current="page" class="breadcrumb-item active" itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem"><span itemprop="name">Переменные и конкатенация 25/75</span><meta content="3" itemprop="position"></li></ol></nav><div class="hexlet-basics-content"><h1 class="h3 font-weight-bold">PHP: Переменные и конкатенация</h1><p>Для закрепления предыдущей темы попробуем использовать переменные с конкатенацией. Синтаксически ничего не меняется: мы умеем конкатенировать (склеивать) две строки:</p>
+
+<pre><code class="prettyprint lang-php hljs language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-variable">$what</span> = <span class="hljs-string">"Kings"</span> . <span class="hljs-string">"road"</span>;
+<span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$what</span>); <span class="hljs-comment">// =&gt; "Kingsroad"</span>
+</code></pre>
+
+<p>… а значит сумеем конкатенировать строку и одну переменную, в которой записана строка:</p>
+
+<pre><code class="prettyprint lang-php hljs language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-variable">$first</span> = <span class="hljs-string">"Kings"</span>;
+<span class="hljs-variable">$what</span> = <span class="hljs-variable">$first</span> . <span class="hljs-string">"road"</span>;
+
+<span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$what</span>); <span class="hljs-comment">// =&gt; "Kingsroad"</span>
+</code></pre>
+
+<p>… и даже конкатенировать две переменные, в которых записаны строки:</p>
+
+<pre><code class="prettyprint lang-php hljs language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-variable">$first</span> = <span class="hljs-string">"Kings"</span>;
+<span class="hljs-variable">$last</span> = <span class="hljs-string">'road'</span>;
+
+<span class="hljs-variable">$what</span> = <span class="hljs-variable">$first</span> . <span class="hljs-variable">$last</span>;
+<span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$what</span>); <span class="hljs-comment">// =&gt; "Kingsroad"</span>
+</code></pre>
+<h2 class="h4 font-weight-bold">Задание</h2><p>Сайты постоянно посылают письма своим пользователям. Типичная задача — сделать автоматическую отправку персонального письма, где в заголовке будет имя пользователя. Если где-то в базе сайта хранится имя человека в виде строки, то задача генерации заголовка сводится к конкатенации: например, нужно склеить строку <code class="prettyprint">Здравствуйте</code> со строкой, где записано имя.</p>
+
+<p>Напишите программу, которая будет генерировать заголовок и тело письма, используя уже готовые переменные, и выводить получившиеся строки на экран.</p>
+
+<p>Для заголовка используйте переменные <code class="prettyprint">$firstName</code> и <code class="prettyprint">$greeting</code>, запятую и восклицательный знак. Выведите это на экран в правильном порядке.</p>
+
+<p>Для тела письма используйте переменные <code class="prettyprint">$info</code> и <code class="prettyprint">$intro</code>, при этом второе предложение должно быть на новой строке.</p>
+
+<p>Результат на экране будет выглядеть так:</p>
+
+<pre class="hexlet-basics-output">Hello, Joffrey!
+Here is important information about your account security.
+We couldn't verify you mother's maiden name.
+</pre>
+
+<p>Выполните задание, используя только два <code class="prettyprint">print_r()</code>.</p>
+<div class="my-4"><details class="mt-1 border rounded"><summary class="p-2">Упражнение не проходит проверку — что делать? 😶</summary><div class="px-2 pt-2"><p>Если вы зашли в тупик, то самое время задать вопрос в «Обсуждениях». <a href="https://help.hexlet.io/ru/articles/111495-kak-pravilno-zadavat-voprosy" target="_blank">Как правильно задать вопрос</a>:</p>
+
+<ul>
+<li>Обязательно приложите вывод тестов, без него практически невозможно понять что не так, даже если вы покажете свой код. Программисты плохо исполняют код в голове, но по полученной ошибке почти всегда понятно, куда смотреть.</li>
+</ul>
+</div></details><details class="mt-1 border rounded"><summary class="p-2">В моей среде код работает, а здесь нет 🤨</summary><div class="px-2 pt-2"><p>Тесты устроены таким образом, что они проверяют решение разными способами и на разных данных. Часто решение работает с одними входными данными, но не работает с другими. Чтобы разобраться с этим моментом, изучите вкладку «Тесты» и внимательно посмотрите на вывод ошибок, в котором есть подсказки.</p>
+</div></details><details class="mt-1 border rounded"><summary class="p-2">Мой код отличается от решения учителя 🤔</summary><div class="px-2 pt-2"><p>Это нормально 🙆, в программировании одну задачу можно выполнить множеством способов. Если ваш код прошел проверку, то он соответствует условиям задачи.</p>
+
+<p>В редких случаях бывает, что решение подогнано под тесты, но это видно сразу.</p>
+</div></details><details class="mt-1 border rounded"><summary class="p-2">Прочитал урок — ничего не понятно 🙄</summary><div class="px-2 pt-2"><p>Создавать обучающие материалы, понятные для всех без исключения, довольно сложно. Мы очень стараемся, но всегда есть что улучшать. Если вы встретили материал, который вам непонятен, опишите проблему в «Обсуждениях». Идеально, если вы сформулируете непонятные моменты в виде вопросов. Обычно нам нужно несколько дней для внесения правок.</p>
+
+<p>Кстати, вы тоже можете участвовать в улучшении курсов: внизу есть ссылка на исходный код уроков, который можно править прямо из браузера.</p>
+</div></details></div><h2 class="h5 font-weight-bold mt-4">Полезное</h2><ul class="ps-4"><li><p>Подумайте, с какой строкой и в каком порядке нужно склеивать переменные, чтобы получить такой двустрочный вывод тела письма.</p>
+</li><li><p>Помните, что можно создать строку, которая содержит только управляющую последовательность <code class="prettyprint">\n</code>.</p>
+</li></ul></div><hr class="my-4"><div class="small text-muted">Нашли ошибку? Есть что добавить? Пулреквесты приветствуются <a target="_blank" rel="nofollow noopener" href="https://github.com/hexlet-basics/exercises-php/blob/main/modules/30-variables/18-concatenation/description.ru.yml">https://github.com/hexlet-basics</a></div></div></div><div class="tab-pane fade overflow-auto x-h-md-100" id="discuss-tab" role="tabpanel"><div class="card-body pt-2 pb-0"><div class="alert alert-info small my-2"><span class="align-baseline">Если вы столкнулись с трудностями и не знаете, что делать, задайте вопрос в нашем большом и дружном</span> <a target="_blank" class="align-baseline" rel="noopener" href="https://slack-ru.hexlet.io/">сообществе</a></div><div id="disqus_thread"><iframe id="dsq-app9579" name="dsq-app9579" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./25_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 0px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div><script>var disqus_config = function () {
+  this.page.url = 'https://ru.code-basics.com/languages/php/lessons/concatenation';
+  this.page.identifier = 'lesson-17';
+  this.page.title = 'Переменные и конкатенация | PHP';
+  this.language = 'ru';
+};
+
+(function() {
+  var d = document, s = d.createElement('script');
+
+  s.src = 'https://hexlet-basics.disqus.com/embed.js';
+
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();</script></div></div></div></div></div><div class="col-12 col-md-6 col-lg-7 pl-md-0 x-h-md-100"><div class="d-flex flex-column x-h-md-100" data-testid="basics-lesson-container" id="basics-lesson-container"><div class="card vh-100 x-h-md-100"><div class="justify-content-center small nav nav-tabs" role="tablist"><div class="nav-item"><a href="https://ru.code-basics.com/languages/php/lessons/concatenation#editor" role="tab" data-rr-ui-event-key="editor" id="tabs-tab-editor" aria-controls="tabs-tabpane-editor" aria-selected="true" class="border-top-0 text-muted rounded-0 nav-link active">Редактор</a></div><div class="nav-item"><a href="https://ru.code-basics.com/languages/php/lessons/concatenation#output" role="tab" data-rr-ui-event-key="output" id="tabs-tab-output" aria-controls="tabs-tabpane-output" aria-selected="false" class="border-top-0 text-muted rounded-0 nav-link" tabindex="-1">Вывод</a></div><div class="nav-item"><a href="https://ru.code-basics.com/languages/php/lessons/concatenation#testForExercise" role="tab" data-rr-ui-event-key="testForExercise" id="tabs-tab-testForExercise" aria-controls="tabs-tabpane-testForExercise" aria-selected="false" tabindex="-1" class="border-top-0 text-muted rounded-0 nav-link">Тесты</a></div><div class="nav-item"><a href="https://ru.code-basics.com/languages/php/lessons/concatenation#solution" role="tab" data-rr-ui-event-key="solution" id="tabs-tab-solution" aria-controls="tabs-tabpane-solution" aria-selected="false" class="border-top-0 text-muted rounded-0 nav-link" tabindex="-1">Решение</a></div></div><div class="d-flex h-100 tab-content overflow-auto"><div role="tabpanel" id="tabs-tabpane-editor" aria-labelledby="tabs-tab-editor" class="fade tab-pane h-100 pe-3 w-100 overflow-hidden active show"><section style="display: flex; position: relative; text-align: initial; width: 100%; height: 100%;"><div class="w-100 h-100" style="width: 100%; --codelens-font-features_ee1f61:&quot;liga&quot; off, &quot;calt&quot; off;" data-keybinding-context="1" data-mode-id="php"><div class="monaco-editor no-user-select  showUnused showDeprecated vs focused" role="code" data-uri="inmemory://model/1" style="width: 553px; height: 685px;"><div data-mprt="3" class="overflow-guard" style="width: 553px; height: 685px;"><div class="margin" role="presentation" aria-hidden="true" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; height: 685px; width: 64px;"><div class="glyph-margin" style="left: 0px; width: 0px; height: 685px;"></div><div class="margin-view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="margin-view-overlays focused" role="presentation" aria-hidden="true" style="position: absolute; width: 64px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 19px; letter-spacing: 0px; height: 685px;"><div style="position:absolute;top:0px;width:100%;height:19px;"><div class="current-line" style="width:64px; height:19px;"></div><div class="active-line-number line-numbers" style="left:0px;width:38px;">1</div></div><div style="position:absolute;top:19px;width:100%;height:19px;"><div class="line-numbers" style="left:0px;width:38px;">2</div></div><div style="position:absolute;top:38px;width:100%;height:19px;"><div class="line-numbers" style="left:0px;width:38px;">3</div></div><div style="position:absolute;top:57px;width:100%;height:19px;"><div class="line-numbers" style="left:0px;width:38px;">4</div></div><div style="position:absolute;top:76px;width:100%;height:19px;"><div class="line-numbers" style="left:0px;width:38px;">5</div></div><div style="position:absolute;top:95px;width:100%;height:19px;"><div class="line-numbers" style="left:0px;width:38px;">6</div></div><div style="position:absolute;top:114px;width:100%;height:19px;"><div class="line-numbers" style="left:0px;width:38px;">7</div></div><div style="position:absolute;top:133px;width:100%;height:19px;"><div class="line-numbers" style="left:0px;width:38px;">8</div></div><div style="position:absolute;top:152px;width:100%;height:19px;"><div class="line-numbers" style="left:0px;width:38px;">9</div></div><div style="position:absolute;top:171px;width:100%;height:19px;"><div class="line-numbers" style="left:0px;width:38px;">10</div></div><div style="position:absolute;top:190px;width:100%;height:19px;"><div class="line-numbers" style="left:0px;width:38px;">11</div></div><div style="position:absolute;top:209px;width:100%;height:19px;"><div class="line-numbers" style="left:0px;width:38px;">12</div></div><div style="position:absolute;top:228px;width:100%;height:19px;"><div class="line-numbers" style="left:0px;width:38px;">13</div></div><div style="position:absolute;top:247px;width:100%;height:19px;"><div class="line-numbers" style="left:0px;width:38px;">14</div></div></div></div><div class="monaco-scrollable-element editor-scrollable vs" role="presentation" data-mprt="5" style="position: absolute; overflow: hidden; left: 64px; height: 685px; width: 489px;"><div class="lines-content monaco-editor-background" style="position: absolute; overflow: hidden; width: 1e+06px; height: 1e+06px; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; left: 0px;"><div class="view-overlays focused" role="presentation" aria-hidden="true" style="position: absolute; height: 0px; width: 592px;"><div style="position:absolute;top:0px;width:100%;height:19px;"><div class="cslr selected-text top-left-radius top-right-radius bottom-right-radius" style="top:0px;left:0px;width:46px;height:19px;"></div></div><div style="position:absolute;top:19px;width:100%;height:19px;"><div class="cslr selected-text" style="top:0px;left:8px;width:10px;height:19px;"></div><div class="cslr monaco-editor-background top-left-radius bottom-left-radius" style="top:0px;left:8px;width:10px;height:19px;"></div><div class="cslr selected-text" style="top:0px;left:0px;width:8px;height:19px;"></div></div><div style="position:absolute;top:38px;width:100%;height:19px;"><div class="cslr selected-text" style="top:0px;left:431px;width:10px;height:19px;"></div><div class="cslr monaco-editor-background bottom-left-radius" style="top:0px;left:431px;width:10px;height:19px;"></div><div class="cslr selected-text top-right-radius" style="top:0px;left:0px;width:431px;height:19px;"></div></div><div style="position:absolute;top:57px;width:100%;height:19px;"><div class="cslr selected-text top-right-radius bottom-right-radius" style="top:0px;left:0px;width:562px;height:19px;"></div></div><div style="position:absolute;top:76px;width:100%;height:19px;"><div class="cslr selected-text" style="top:0px;left:8px;width:10px;height:19px;"></div><div class="cslr monaco-editor-background top-left-radius bottom-left-radius" style="top:0px;left:8px;width:10px;height:19px;"></div><div class="cslr selected-text" style="top:0px;left:0px;width:8px;height:19px;"></div></div><div style="position:absolute;top:95px;width:100%;height:19px;"><div class="cslr selected-text top-right-radius bottom-right-radius" style="top:0px;left:0px;width:185px;height:19px;"></div></div><div style="position:absolute;top:114px;width:100%;height:19px;"><div class="cslr selected-text" style="top:0px;left:162px;width:10px;height:19px;"></div><div class="cslr monaco-editor-background top-left-radius" style="top:0px;left:162px;width:10px;height:19px;"></div><div class="cslr selected-text bottom-right-radius" style="top:0px;left:0px;width:162px;height:19px;"></div></div><div style="position:absolute;top:133px;width:100%;height:19px;"><div class="cslr selected-text" style="top:0px;left:8px;width:10px;height:19px;"></div><div class="cslr monaco-editor-background top-left-radius" style="top:0px;left:8px;width:10px;height:19px;"></div><div class="cslr selected-text" style="top:0px;left:0px;width:8px;height:19px;"></div></div><div style="position:absolute;top:152px;width:100%;height:19px;"><div class="cslr selected-text" style="top:0px;left:8px;width:10px;height:19px;"></div><div class="cslr monaco-editor-background bottom-left-radius" style="top:0px;left:8px;width:10px;height:19px;"></div><div class="cslr selected-text" style="top:0px;left:0px;width:8px;height:19px;"></div></div><div style="position:absolute;top:171px;width:100%;height:19px;"><div class="cslr selected-text" style="top:0px;left:277px;width:10px;height:19px;"></div><div class="cslr monaco-editor-background bottom-left-radius" style="top:0px;left:277px;width:10px;height:19px;"></div><div class="cslr selected-text top-right-radius" style="top:0px;left:0px;width:277px;height:19px;"></div></div><div style="position:absolute;top:190px;width:100%;height:19px;"><div class="cslr selected-text top-right-radius bottom-right-radius" style="top:0px;left:0px;width:362px;height:19px;"></div></div><div style="position:absolute;top:209px;width:100%;height:19px;"><div class="cslr selected-text" style="top:0px;left:246px;width:10px;height:19px;"></div><div class="cslr monaco-editor-background top-left-radius" style="top:0px;left:246px;width:10px;height:19px;"></div><div class="cslr selected-text bottom-right-radius" style="top:0px;left:0px;width:246px;height:19px;"></div></div><div style="position:absolute;top:228px;width:100%;height:19px;"><div class="cslr selected-text" style="top:0px;left:54px;width:10px;height:19px;"></div><div class="cslr monaco-editor-background top-left-radius" style="top:0px;left:54px;width:10px;height:19px;"></div><div class="cslr selected-text bottom-right-radius" style="top:0px;left:0px;width:54px;height:19px;"></div></div><div style="position:absolute;top:247px;width:100%;height:19px;"><div class="cslr selected-text bottom-left-radius top-right-radius bottom-right-radius" style="top:0px;left:0px;width:0px;height:19px;"></div></div></div><div role="presentation" aria-hidden="true" class="view-rulers"></div><div class="view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="view-lines monaco-mouse-cursor-text" role="presentation" aria-hidden="true" data-mprt="7" style="position: absolute; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 19px; letter-spacing: 0px; width: 592px; height: 685px;"><div style="top:0px;height:19px;" class="view-line"><span><span class="mtk15 mtkb">&lt;?php</span></span></div><div style="top:19px;height:19px;" class="view-line"><span><span></span></span></div><div style="top:38px;height:19px;" class="view-line"><span><span class="mtk23">$info</span><span class="mtk1">&nbsp;=&nbsp;</span><span class="mtk20">"We&nbsp;couldn't&nbsp;verify&nbsp;you&nbsp;mother's&nbsp;maiden&nbsp;name."</span><span class="mtk1">;</span></span></div><div style="top:57px;height:19px;" class="view-line"><span><span class="mtk23">$intro</span><span class="mtk1">&nbsp;=&nbsp;</span><span class="mtk20">"\nHere&nbsp;is&nbsp;important&nbsp;information&nbsp;about&nbsp;your&nbsp;accoun</span><span class="mtk20">t&nbsp;security."</span><span class="mtk1">;</span></span></div><div style="top:76px;height:19px;" class="view-line"><span><span></span></span></div><div style="top:95px;height:19px;" class="view-line"><span><span class="mtk23">$firstName</span><span class="mtk1">&nbsp;=&nbsp;</span><span class="mtk20">'Joffrey'</span><span class="mtk1">;</span></span></div><div style="top:114px;height:19px;" class="view-line"><span><span class="mtk23">$greeting</span><span class="mtk1">&nbsp;=&nbsp;</span><span class="mtk20">'Hello'</span><span class="mtk1">;</span></span></div><div style="top:133px;height:19px;" class="view-line"><span><span></span></span></div><div style="top:152px;height:19px;" class="view-line"><span><span></span></span></div><div style="top:171px;height:19px;" class="view-line"><span><span class="mtk8">//&nbsp;BEGIN&nbsp;(write&nbsp;your&nbsp;solution&nbsp;here)</span></span></div><div style="top:190px;height:19px;" class="view-line"><span><span class="mtk1">print_r(</span><span class="mtk23">$greeting</span><span class="mtk1">&nbsp;.&nbsp;</span><span class="mtk20">",&nbsp;"</span><span class="mtk1">&nbsp;.&nbsp;</span><span class="mtk23">$firstName</span><span class="mtk1">&nbsp;.&nbsp;</span><span class="mtk20">"!"</span><span class="mtk1">&nbsp;);</span></span></div><div style="top:209px;height:19px;" class="view-line"><span><span class="mtk1">print_r(</span><span class="mtk23">$intro</span><span class="mtk1">&nbsp;.&nbsp;</span><span class="mtk20">"\n"</span><span class="mtk1">&nbsp;.&nbsp;</span><span class="mtk23">$info</span><span class="mtk1">);</span></span></div><div style="top:228px;height:19px;" class="view-line"><span><span class="mtk8">//&nbsp;END</span></span></div><div style="top:247px;height:19px;" class="view-line"><span><span></span></span></div></div><div data-mprt="1" class="contentWidgets" style="position: absolute; top: 0px;"></div><div role="presentation" aria-hidden="true" class="cursors-layer has-selection cursor-line-style cursor-solid"><div class="cursor monaco-mouse-cursor-text " style="height: 19px; top: 0px; left: 0px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 19px; letter-spacing: 0px; display: block; visibility: inherit; width: 2px;"></div></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal fade" style="position: absolute; width: 475px; height: 12px; left: 0px; bottom: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 12px; transform: translate3d(0px, 0px, 0px); contain: strict; width: 392px;"></div></div><canvas class="decorationsOverviewRuler" aria-hidden="true" width="14" height="685" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; right: 0px; width: 14px; height: 685px; display: block;"></canvas><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical fade" style="position: absolute; width: 14px; height: 685px; right: 0px; top: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 14px; transform: translate3d(0px, 0px, 0px); contain: strict; height: 685px;"></div></div></div><div role="presentation" aria-hidden="true" style="width: 553px;"></div><textarea data-mprt="6" class="inputarea monaco-mouse-cursor-text" wrap="off" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" aria-label="Editor content;Press Alt+F1 for Accessibility Options." tabindex="0" role="textbox" aria-roledescription="editor" aria-multiline="true" aria-haspopup="false" aria-autocomplete="both" style="font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 19px; letter-spacing: 0px; top: 0px; left: 64px; width: 1px; height: 1px;"></textarea><div style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px;" class="monaco-editor-background textAreaCover line-numbers"></div><div data-mprt="4" class="overlayWidgets" style="width: 553px;"><div class="accessibilityHelpWidget" role="dialog" aria-hidden="true" widgetid="editor.contrib.accessibilityHelpWidget" style="display: none; position: absolute;"><div role="document"></div></div><div widgetid="editor.contrib.quickInputWidget" style="position: absolute; top: 0px; right: 50%;"></div></div><div data-mprt="8" class="minimap slider-mouseover" role="presentation" aria-hidden="true" style="position: absolute; left: 0px; width: 0px; height: 685px;"><div class="minimap-shadow-hidden" style="height: 685px;"></div><canvas width="0" height="685" style="position: absolute; left: 0px; width: 0px; height: 685px;"></canvas><canvas class="minimap-decorations-layer" width="0" height="685" style="position: absolute; left: 0px; width: 0px; height: 685px;"></canvas><div class="minimap-slider" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; width: 0px;"><div class="minimap-slider-horizontal" style="position: absolute; width: 0px; height: 0px;"></div></div></div></div><div data-mprt="2" class="overflowingContentWidgets"><div class="monaco-editor rename-box" widgetid="__renameInputWidget" style="background-color: rgb(243, 243, 243); box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 8px 2px; color: rgb(97, 97, 97); position: absolute; display: none; visibility: hidden; max-width: 1920px;"><input class="rename-input" type="text" aria-label="Rename input. Type new name and press Enter to commit." style="font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; background-color: rgb(255, 255, 255); border-width: 0px; border-style: none;"><div class="rename-label" style="font-size: 11.2px;">Enter to Rename, Shift+Enter to Preview</div></div><div class="monaco-hover hidden" tabindex="0" role="tooltip" widgetid="editor.contrib.contentHoverWidget" style="position: absolute; display: none; visibility: hidden; max-width: 1920px;"><div class="monaco-scrollable-element " role="presentation" style="position: relative; overflow: hidden;"><div class="monaco-hover-content" style="overflow: hidden; font-size: 14px; line-height: 1.35714; max-height: 250px; max-width: 500px;"></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; transform: translate3d(0px, 0px, 0px); contain: strict;"></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 10px; transform: translate3d(0px, 0px, 0px); contain: strict;"></div></div><div class="shadow"></div><div class="shadow"></div><div class="shadow"></div></div></div><div class="editor-widget suggest-widget" widgetid="editor.widget.suggestWidget" style="position: absolute; display: none; visibility: hidden; max-width: 1920px; height: 78px; width: 430px; top: 228px; left: 210px;"><div class="monaco-sash vertical" style="left: 428px;"></div><div class="monaco-sash vertical disabled" style="left: -2px;"></div><div class="monaco-sash orthogonal-edge-north horizontal disabled" style="top: -2px;"><div class="orthogonal-drag-handle end"></div></div><div class="monaco-sash orthogonal-edge-south horizontal" style="top: 76px;"><div class="orthogonal-drag-handle end"></div></div><div class="message" aria-hidden="true" style="display: none;"></div><div class="tree" style="height: 78px; display: none;" aria-hidden="true"><div class="monaco-list list_id_1 selection-none" tabindex="0" role="listbox" aria-label="Suggest" aria-multiselectable="true"><div class="monaco-scrollable-element " role="presentation" style="position: relative; overflow: hidden;"><div class="monaco-list-rows" style="transform: translate3d(0px, 0px, 0px); overflow: hidden; height: 0px; left: 0px; top: 0px;"></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute; width: 0px; height: 10px; left: 0px; bottom: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; transform: translate3d(0px, 0px, 0px); contain: strict; width: 0px;"></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute; width: 10px; height: 78px; right: 0px; top: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 10px; transform: translate3d(0px, 0px, 0px); contain: strict; height: 78px;"></div></div></div><style type="text/css" media="screen">.monaco-list.list_id_1:focus .monaco-list-row.selected { background-color: #0060c0; }
+.monaco-list.list_id_1:focus .monaco-list-row.selected:hover { background-color: #0060c0; }
+.monaco-list.list_id_1:focus .monaco-list-row.selected { color: #ffffff; }
+
+				.monaco-drag-image,
+				.monaco-list.list_id_1:focus .monaco-list-row.selected.focused { background-color: #0060c0; }
+			
+
+				.monaco-drag-image,
+				.monaco-list.list_id_1:focus .monaco-list-row.selected.focused { color: #ffffff; }
+			
+.monaco-list.list_id_1 .monaco-list-row.focused { background-color:  #0060c0; }
+.monaco-list.list_id_1 .monaco-list-row.focused:hover { background-color:  #0060c0; }
+.monaco-list.list_id_1 .monaco-list-row.selected { background-color:  #e4e6f1; }
+.monaco-list.list_id_1 .monaco-list-row.selected:hover { background-color:  #e4e6f1; }
+.monaco-list.list_id_1:not(.drop-target) .monaco-list-row:hover:not(.selected):not(.focused) { background-color: #f0f0f0; }
+
+				.monaco-drag-image,
+				.monaco-list.list_id_1:focus .monaco-list-row.focused { outline: 1px solid #0090f1; outline-offset: -1px; }
+				.monaco-workbench.context-menu-visible .monaco-list.list_id_1.last-focused .monaco-list-row.focused { outline: 1px solid #0090f1; outline-offset: -1px; }
+			
+
+				.monaco-list.list_id_1.drop-target,
+				.monaco-list.list_id_1 .monaco-list-rows.drop-target,
+				.monaco-list.list_id_1 .monaco-list-row.drop-target { background-color: #d6ebff !important; color: inherit !important; }
+			
+.monaco-list-type-filter { background-color: #efc1ad }
+.monaco-list-type-filter { border: 1px solid rgba(0, 0, 0, 0); }
+.monaco-list-type-filter.no-matches { border: 1px solid #be1100; }
+.monaco-list-type-filter { box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.16); }
+
+				.monaco-table:hover > .monaco-split-view2,
+				.monaco-table:hover > .monaco-split-view2 .monaco-sash.vertical::before {
+					border-color: rgba(97, 97, 97, 0.13);
+			}
+
+				.monaco-table .monaco-list-row[data-parity=odd]:not(.focused):not(.selected):not(:hover) .monaco-table-tr,
+				.monaco-table .monaco-list:not(:focus) .monaco-list-row[data-parity=odd].focused:not(.selected):not(:hover) .monaco-table-tr,
+				.monaco-table .monaco-list:not(.focused) .monaco-list-row[data-parity=odd].focused:not(.selected):not(:hover) .monaco-table-tr {
+					background-color: rgba(97, 97, 97, 0.04);
+				}
+			</style></div></div><div class="suggest-status-bar" style="line-height: 19px; display: none;" aria-hidden="true"><div class="monaco-action-bar animated left"><ul class="actions-container" role="presentation"><li class="action-item menu-entry" role="presentation"><a class="action-label" role="button" title="Insert (Enter)" tabindex="0">Insert (⏎)</a></li></ul></div><div class="monaco-action-bar animated right"><ul class="actions-container" role="presentation"><li class="action-item menu-entry" role="presentation"><a class="action-label" role="button" title="show more (Ctrl+Space)" tabindex="0">show more (Ctrl+Space)</a></li></ul></div></div></div></div></div></div></section></div><div role="tabpanel" id="tabs-tabpane-output" aria-labelledby="tabs-tab-output" class="fade tab-pane h-100 p-3 w-100"><div class="d-flex flex-column h-100"><pre><code class="nohighlight">Hello, Joffrey!
+Here is important information about your account security.
+We couldn't verify you mother's maiden name.
+
+<span style="color:rgb(0,187,0)">PHPUnit Pretty Result Printer 0.32.0 by Codedungeon and contributors.
+</span>PHPUnit 9.5.16 by Sebastian Bergmann and contributors.
+
+<span style="color:rgb(0,187,0)">. </span>
+
+Time: 00:00.028, Memory: 6.00 MB
+
+<span style="color:rgb(0,0,0);background-color:rgb(0,187,0)">OK (1 test, 1 assertion)</span>
+</code></pre><div class="mt-auto alert mb-0 small p-2 alert-success">Ура! Всё получилось! Сравните своё решение с решением учителя и переходите к следующему уроку</div></div></div><div role="tabpanel" id="tabs-tabpane-testForExercise" aria-labelledby="tabs-tab-testForExercise" class="fade tab-pane h-100 p-3 w-100"><div><p class="text-center lead">Ваше упражнение проверяется по этим тестам</p><div class="hexlet-basics-content"><pre class="hljs"><code class="language-php" style="white-space: pre;"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">1</span><span class="hljs-meta">&lt;?php</span><span class=""> </span><span class="hljs-comment">// phpcs:ignore PSR1.Files.SideEffects</span><span class="">
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">2</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">3</span><span class=""></span><span class="hljs-keyword">namespace</span><span class=""> </span><span class="hljs-title">HexletBasics</span><span class="">\</span><span class="hljs-title">Variables</span><span class="">\</span><span class="hljs-title">Concatenation</span><span class="">;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">4</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">5</span><span class=""></span><span class="hljs-keyword">use</span><span class=""> </span><span class="hljs-title">PHPUnit</span><span class="">\</span><span class="hljs-title">Framework</span><span class="">\</span><span class="hljs-title">TestCase</span><span class="">;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">6</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">7</span>\HexletBasics\Functions\runScript();
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">8</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">9</span><span class=""></span><span class="hljs-class hljs-keyword">class</span><span class="hljs-class"> </span><span class="hljs-class hljs-title">Test</span><span class="hljs-class"> </span><span class="hljs-class hljs-keyword">extends</span><span class="hljs-class"> </span><span class="hljs-class hljs-title">TestCase</span><span class="hljs-class">
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">10</span><span class="hljs-class"></span><span class="">{
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">11</span><span class="">    </span><span class="hljs-keyword">public</span><span class=""> </span><span class="hljs-function hljs-keyword">function</span><span class="hljs-function"> </span><span class="hljs-function hljs-title">test</span><span class="hljs-function">(</span><span class="hljs-function">)
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">12</span><span class="hljs-function">    </span><span class="">{
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">13</span><span class="">        </span><span class="hljs-variable">$expected</span><span class=""> = </span><span class="hljs-string">&lt;&lt;&lt;HERE
+</span><span class="hljs-string"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">14</span>Hello, Joffrey!
+</span><span class="hljs-string"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">15</span>Here is important information about your account security.
+</span><span class="hljs-string"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">16</span>We couldn't verify you mother's maiden name.
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">17</span><span class="hljs-string">HERE</span><span class="">;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">18</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">19</span><span class="">        </span><span class="hljs-keyword">$this</span><span class="">-&gt;expectOutputString(</span><span class="hljs-variable">$expected</span><span class="">);
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">20</span><span class="">        </span><span class="hljs-keyword">require</span><span class=""> </span><span class="hljs-string">'index.php'</span><span class="">;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">21</span>    }
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">22</span>}
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">23</span></code></pre></div></div></div><div role="tabpanel" id="tabs-tabpane-solution" aria-labelledby="tabs-tab-solution" class="fade tab-pane h-100 p-3 w-100"><div><div class="p-lg-3 hexlet-basics-content" id="basics-solution"><h2 class="h3">Решение учителя:</h2><pre style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><code class="language-php" style="white-space: pre;"><span style="color: rgb(31, 113, 153);">&lt;?php</span><span>
+</span>
+<span></span><span style="color: rgb(188, 96, 96);">$info</span><span> = </span><span style="color: rgb(136, 0, 0);">"We couldn't verify you mother's maiden name."</span><span>;
+</span><span></span><span style="color: rgb(188, 96, 96);">$intro</span><span> = </span><span style="color: rgb(136, 0, 0);">"\nHere is important information about your account security."</span><span>;
+</span>
+<span></span><span style="color: rgb(188, 96, 96);">$firstName</span><span> = </span><span style="color: rgb(136, 0, 0);">'Joffrey'</span><span>;
+</span><span></span><span style="color: rgb(188, 96, 96);">$greeting</span><span> = </span><span style="color: rgb(136, 0, 0);">'Hello'</span><span>;
+</span>
+<span></span><span style="color: rgb(136, 136, 136);">// BEGIN</span><span>
+</span><span>print_r(</span><span style="color: rgb(188, 96, 96);">$greeting</span><span> . </span><span style="color: rgb(136, 0, 0);">", "</span><span> . </span><span style="color: rgb(188, 96, 96);">$firstName</span><span> . </span><span style="color: rgb(136, 0, 0);">"!"</span><span>);
+</span><span>print_r(</span><span style="color: rgb(188, 96, 96);">$intro</span><span> . </span><span style="color: rgb(136, 0, 0);">"\n"</span><span> . </span><span style="color: rgb(188, 96, 96);">$info</span><span>);
+</span><span></span><span style="color: rgb(136, 136, 136);">// END</span><span>
+</span></code></pre><div><h2 class="h3">Ваше решение:</h2><pre style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><code class="language-php" style="white-space: pre;"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">1</span><span style="color: rgb(31, 113, 153);">&lt;?php</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">2</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">3</span><span></span><span style="color: rgb(188, 96, 96);">$info</span><span> = </span><span style="color: rgb(136, 0, 0);">"We couldn't verify you mother's maiden name."</span><span>;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">4</span><span></span><span style="color: rgb(188, 96, 96);">$intro</span><span> = </span><span style="color: rgb(136, 0, 0);">"\nHere is important information about your account security."</span><span>;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">5</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">6</span><span></span><span style="color: rgb(188, 96, 96);">$firstName</span><span> = </span><span style="color: rgb(136, 0, 0);">'Joffrey'</span><span>;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">7</span><span></span><span style="color: rgb(188, 96, 96);">$greeting</span><span> = </span><span style="color: rgb(136, 0, 0);">'Hello'</span><span>;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">8</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">9</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">10</span><span></span><span style="color: rgb(136, 136, 136);">// BEGIN (write your solution here)</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">11</span><span>print_r(</span><span style="color: rgb(188, 96, 96);">$greeting</span><span> . </span><span style="color: rgb(136, 0, 0);">", "</span><span> . </span><span style="color: rgb(188, 96, 96);">$firstName</span><span> . </span><span style="color: rgb(136, 0, 0);">"!"</span><span> );
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">12</span><span>print_r(</span><span style="color: rgb(188, 96, 96);">$intro</span><span> . </span><span style="color: rgb(136, 0, 0);">"\n"</span><span style=""> . </span><span style="color: rgb(188, 96, 96);">$info</span><span>);
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">13</span><span style=""></span><span style="color: rgb(136, 136, 136);">// END</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">14</span></code></pre></div></div></div></div></div><div class="d-flex p-3 border-top"><div class="m-auto"><button type="button" class="me-3 btn btn-outline-secondary"><span class="bi bi-arrow-repeat"></span></button><a class="btn btn-outline-secondary
+    fw-normal me-3 order-first order-sm-0 order-md-first order-lg-0" href="https://ru.code-basics.com/languages/php/lessons/concatenation/prev_lesson"><span class="bi bi-arrow-left-short d-sm-none d-md-block d-lg-none"></span><span class="d-none d-sm-block d-md-none d-lg-block">Предыдущий</span></a><button type="button" class="me-3 d-inline-flex align-items-center btn btn-primary"><span class="bi bi-play-circle"></span><span class="d-none d-sm-block d-md-none d-lg-block ms-1">Проверить</span></button><a class="btn btn-outline-primary fw-normal" href="https://ru.code-basics.com/languages/php/lessons/concatenation/next_lesson"><span class="bi bi-arrow-right-short d-sm-none d-md-block d-lg-none"></span><span class="d-none d-sm-block d-md-none d-lg-block">Следующий</span></a></div></div></div></div></div></div></main><script src="./25_files/loader.js.Без названия"></script><script type="text/javascript" id="">var EventsMapping={on:function(a,b){if(gon.fired_events.hasOwnProperty(a)){if(-1===gon.events.indexOf(a))throw Error("Undefined event name "+a+". Check gon.events["+gon.events.join(",")+"], gon.fired_events["+Object.keys(gon.fired_events).join(",")+"]");var c=gon.fired_events[a];b(a,c)}}};</script>
+<script type="text/javascript" id="">(function(a,e,f,g,b,c,d){a[b]=a[b]||function(){(a[b].a=a[b].a||[]).push(arguments)};a[b].l=1*new Date;c=e.createElement(f);d=e.getElementsByTagName(f)[0];c.async=1;c.src=g;d.parentNode.insertBefore(c,d)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(google_tag_manager["GTM-WVMW3V8"].macro(4),"init",{clickmap:!0,trackLinks:!0,accurateTrackBounce:!0,webvisor:!0});window.EventsMapping.on("signed_up",function(){ym(google_tag_manager["GTM-WVMW3V8"].macro(5),"reachGoal","new-registration")});</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/54648685" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<div style="display: none; visibility: hidden;">
+<script type="text/javascript">var currentUser=gon.current_user;window.wootricSettings={account_token:google_tag_manager["GTM-WVMW3V8"].macro(6),language:gon.locale.toUpperCase()};currentUser.is_guest||Object.assign(window.wootricSettings,{email:currentUser.email,external_id:currentUser.id,created_at:Math.floor(Date.parse(currentUser.created_at)/1E3)});</script>
+<script type="text/javascript" src="./25_files/wootric-sdk.js.Без названия"></script>
+<script type="text/javascript">var currentUser=gon.current_user;currentUser.is_guest||window.wootric("run");</script>
+</div>
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init",google_tag_manager["GTM-WVMW3V8"].macro(7));fbq("track","PageView");window.EventsMapping.on("signed_up",function(){fbq("track","CompleteRegistration")});</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3459012500806719&amp;ev=PageView&amp;noscript=1"></noscript>
+<script type="text/javascript" id="">!function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="https://vk.com/js/api/openapi.js?169";a.onload=function(){VK.Retargeting.Init(google_tag_manager["GTM-WVMW3V8"].macro(8));VK.Retargeting.Hit()};document.head.appendChild(a)}();</script>
+
+<noscript><img src="https://vk.com/rtrg?p=VK-RTRG-1529200-2RzRS" style="position:fixed; left:-999px;" alt=""></noscript>
+<div style="display: none; visibility: hidden;"><script type="text/javascript">window.Trengo=window.Trengo||{};window.Trengo.key=google_tag_manager["GTM-WVMW3V8"].macro(9);window.Trengo.contact_data={name:gon.current_user.full_name,email:gon.current_user.email};var cookie_data=document.cookie,ga_client_id=google_tag_manager["GTM-WVMW3V8"].macro(10)(cookie_data,"_ga_cid");
+window.Trengo.ticket_data={custom_fields:[{field_id:118032,value:ga_client_id},{field_id:113607,value:google_tag_manager["GTM-WVMW3V8"].macro(11)(cookie_data,"utm_campaign")},{field_id:113602,value:google_tag_manager["GTM-WVMW3V8"].macro(12)(cookie_data,"utm_medium")},{field_id:113612,value:google_tag_manager["GTM-WVMW3V8"].macro(13)(cookie_data,"utm_source")},{field_id:118107,value:window.location.href},{field_id:118117,value:window.location.origin}]};window.Trengo.emojiPicker=!0;
+(function(b,a,c){a=b.createElement("script");a.type="text/javascript";a.async=!0;a.src="https://static.widget.trengo.eu/embed.js";b.getElementsByTagName("head")[0].appendChild(a)})(document);</script></div>
+<script type="text/javascript" id="">var _tmr=window._tmr||(window._tmr=[]);_tmr.push({id:google_tag_manager["GTM-WVMW3V8"].macro(14),type:"pageView",start:(new Date).getTime()});window.EventsMapping.on("signed_up",function(){_tmr.push({id:google_tag_manager["GTM-WVMW3V8"].macro(15),type:"reachGoal",goal:"new-registration"})});
+(function(c,e,a){if(!c.getElementById(a)){var b=c.createElement("script");b.type="text/javascript";b.async=!0;b.id=a;b.src="https://top-fwz1.mail.ru/js/code.js";a=function(){var d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d)};"[object Opera]"==e.opera?c.addEventListener("DOMContentLoaded",a,!1):a()}})(document,window,"topmailru-code");</script><noscript><div>
+<img src="https://top-fwz1.mail.ru/counter?id=3216309;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru">
+</div></noscript>
+<script type="text/javascript" id="" src="./25_files/analytics.min.js.Без названия"></script><script type="text/javascript" id="">(function(){window.dataLayer=window.dataLayer||[];var b=gon.events,c=gon.fired_events||[],a;for(a in c){if(-1===b.indexOf(a))throw Error("[Fired Events] Undefined event name "+a+". Check gon.events.");window.dataLayer.push({event:a,user_id:gon.current_user?gon.current_user.id:null})}})();</script><script type="text/javascript" id="">(function(a,d,e,f,g,b,c){a.visitorGlobalObjectAlias=f;a[a.visitorGlobalObjectAlias]=a[a.visitorGlobalObjectAlias]||function(){(a[a.visitorGlobalObjectAlias].q=a[a.visitorGlobalObjectAlias].q||[]).push(arguments)};a[a.visitorGlobalObjectAlias].l=(new Date).getTime();b=d.createElement("script");b.src=e;b.async=!0;c=d.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)})(window,document,"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js","vgo");vgo("setAccount",google_tag_manager["GTM-WVMW3V8"].macro(17));
+vgo("setTrackByDefault",!0);gon.current_user.is_guest||vgo("setEmail",gon.current_user.email);vgo("process");</script><script type="text/javascript" id="">(function(e,a,f,c,b){e.roistatProjectId=b;e.roistatHost=c;e="https:"==a.location.protocol?"https://":"http://";var d=/^.*roistat_visit=[^;]+(.*)?$/.test(a.cookie)?"/dist/module.js":"/api/site/1.0/"+b+"/init?referrer\x3d"+encodeURIComponent(a.location.href);b=a.createElement(f);b.charset="UTF-8";b.defer=1;b.src=e+c+d;a=a.getElementsByTagName(f)[0];a.parentNode.insertBefore(b,a)})(window,document,"script","cloud.roistat.com","ff62a9ecb9e99011d5d70d0f15a4090c");
+window.onRoistatAllModulesLoaded=function(){window.roistat.registerOnVisitProcessedCallback(function(){var e="ru.hexlet.io hexlet.io ru.code-basics.com code-basics.com premium.hexlet.io profession.hexlet.io pre.hexlet.io fundamentals.hexlet.io special.hexlet.io career.hexlet.io guides.hexlet.io live.hexlet.io".split(" "),a=document.querySelectorAll('a[href*\x3d"http"]'),f=(new URL(window.location.href)).hostname,c;for(c in a){var b=a[c].href;if(b&&3<b.length){var d=new URL(a[c].href);d.hostname!==
+f&&e.includes(d.hostname)&&(b="roistat_visit\x3d"+window.roistat.getVisit(),d=d.search.includes("?")?"\x26":"?",a[c].href=a[c].href+d+b)}}})};</script><iframe style="display: none;" src="./25_files/saved_resource(1).html"></iframe>
+<script type="text/javascript" id="" src="./25_files/main.js.Без названия"></script>
+
+<script type="text/javascript" id="">var Analytics=_analytics.init({app:"code-basics",plugins:[N8nPlugin({workflows:google_tag_manager["GTM-WVMW3V8"].macro(16)})]});window.EventsMapping.on("signed_up",Analytics.track);window.EventsMapping.on("language_finished",Analytics.track);window.EventsMapping.on("lesson_finished",Analytics.track);</script><div class="monaco-aria-container"><div class="monaco-alert" role="alert" aria-atomic="true"></div><div class="monaco-alert" role="alert" aria-atomic="true"></div><div class="monaco-status" role="complementary" aria-live="polite" aria-atomic="true"></div><div class="monaco-status" role="complementary" aria-live="polite" aria-atomic="true"></div></div><script type="text/javascript" id="">"ym"in window&&ym(google_tag_manager["GTM-WVMW3V8"].macro(29),"reachGoal","scroll50");</script><iframe id="trengo-widget" style="display: none;" src="./25_files/saved_resource(2).html"></iframe><div id="trengo-web-widget"><div><div class="TrengoWidgetLauncher__iframe"><iframe title="trengo-widget-launcher" class="trengo-vue-iframe" src="./25_files/saved_resource(3).html"></iframe> <!----></div> <!----> <div class="TrengoWidgetBadge__iframe" style="display: none;"><iframe title="trengo-widget-badge" class="trengo-vue-iframe" src="./25_files/saved_resource(4).html"></iframe></div> <div class="TrengoOnlineStatus__iframe" style="display: none;"><iframe title="trengo-widget-status" class="trengo-vue-iframe" src="./25_files/saved_resource(5).html"></iframe></div> <div class="trengo-shadow" style="display: none;"></div> <div class="TrengoWidgetPanel__iframe" style="height: calc((((100% - 20px) - 75px) - 20px) - 0px); display: none;"><iframe title="Будем рады ответить на вопросы и помочь разобраться в том, что непонятно" class="trengo-vue-iframe" src="./25_files/saved_resource(6).html"></iframe></div></div></div><style>.trengo-vue-iframe{all:unset;border:none;background:transparent;padding:0;margin:0;width:100%!important;height:100%!important}.trengo-shadow{all:unset;z-index:2147483548;position:fixed;width:500px;height:500px;bottom:0;right:0;content:"";pointer-events:none;background:radial-gradient(ellipse at bottom right,rgba(29,39,54,.16) 0,rgba(29,39,54,0) 72%)}@media only screen and (max-device-width:667px),screen and (max-width:450px){.trengo-shadow{display:none}}.trengo-shadow.TrengoWidget--position-left{right:auto;left:0;background:radial-gradient(ellipse at bottom left,rgba(29,39,54,.16) 0,rgba(29,39,54,0) 72%)}@media screen\0{.trengo-shadow{display:none}}.TrengoWidgetLauncher__iframe{all:unset;width:60px;height:60px;position:fixed;bottom:20px;right:20px;z-index:2147483550;border-radius:100%;animation:trengo-widget-launcher .15s ease .5s 1 normal backwards!important;box-shadow:0 0 20px rgba(0,0,0,.3)!important}.TrengoWidgetLauncher__iframe.TrengoWidget--position-left{right:auto;left:20px}.launcher-triangle{margin-left:-7px;transform:rotate(90deg)}.launcher-triangle,.launcher-triangle-left{content:"";position:absolute;bottom:0;left:50%;width:0;height:0;border-right:20px solid transparent;border-left:20px solid transparent;border-top:34px solid transparent;border-bottom:0;margin-bottom:-8px;z-index:-1}.launcher-triangle-left{margin-left:-33px;transform:rotate(-90deg)}.TrengoWidgetBadge__iframe{all:unset;width:20px;height:20px;position:fixed;bottom:65px;right:20px;z-index:2147483550;box-shadow:0 5px 40px rgba(0,0,0,.16)!important;border-radius:100%;animation:trengo-widget-launcher .15s ease .15s 1 normal backwards!important;background:#d52525}.TrengoWidgetBadge__iframe.TrengoWidget--position-left{right:auto;left:60px}.TrengoWidgetPanel__iframe{all:unset;width:410px;right:20px;position:fixed;z-index:2147483550;transition:opacity,max-height .5s ease 0s;box-shadow:0 5px 40px rgba(0,0,0,.16)!important;border-radius:24px!important;bottom:110px!important;min-height:250px!important;max-height:750px!important;overflow:hidden}.TrengoWidgetPanel__iframe iframe{top:0;bottom:0;left:0;right:0;position:absolute}.TrengoWidgetPanel__iframe.TrengoWidget--position-left{right:auto;left:20px}@media only screen and (max-device-width:667px),screen and (max-width:450px){.TrengoWidgetPanel__iframe{height:100%!important;bottom:0!important;z-index:2147483550!important;width:100%!important;max-height:none!important;top:0!important;left:0!important;right:0!important;border-radius:0!important;margin:0!important}}.TrengoWidgetGreeter__iframe{all:unset;position:fixed;z-index:2147483550;right:0;width:400px;bottom:88px;height:180px;overflow:hidden;animation:trengo-widget-launcher .15s ease .15s 1 normal backwards!important}.TrengoWidgetGreeter__iframe.TrengoWidget--position-left{right:auto;left:0}.TrengoOnlineStatus__iframe{all:unset;position:fixed;z-index:21404836887;right:80px;width:auto;height:80px;bottom:8px;overflow:hidden;animation:trengo-fade-slide-in .4s ease .5s forwards!important;opacity:0}@media only screen and (max-device-width:667px),screen and (max-width:450px){.TrengoOnlineStatus__iframe{display:none}}.TrengoOnlineStatus__iframe.TrengoWidget--position-left{right:auto;left:76px}#trengo-web-widget{all:unset}#trengo-web-widget .fade-enter-active,#trengo-web-widget .fade-leave-active{transition:opacity .2s}#trengo-web-widget .fade-enter,#trengo-web-widget .fade-leave-to{opacity:0}#trengo-web-widget .slide-fade-enter-active{transition:all .3s ease}#trengo-web-widget .slide-fade-leave-active{transition:all .2s cubic-bezier(1,.5,.8,1)}#trengo-web-widget .slide-fade-enter,#trengo-web-widget .slide-fade-leave-to{transform:translateX(10px);opacity:0}#trengo-web-widget .slide-fade-up-enter-active{transition:all .2s ease}#trengo-web-widget .slide-fade-up-leave-active{transition:all .1s cubic-bezier(1,.5,.8,1)}#trengo-web-widget .slide-fade-up-enter,#trengo-web-widget .slide-fade-up-leave-to{transform:translateY(40px);opacity:0}@keyframes trengo-slide-from-right{0%{transform:translateX(10px);opacity:0}to{transform:translateX(0);opacity:1}}@keyframes trengo-slide-from-left{0%{transform:translateX(-10px);opacity:0}to{transform:translateX(0);opacity:1}}@keyframes trengo-top-bottom{0%{transform:translateY(-102px);opacity:0}to{transform:translateY(0)}}@keyframes trengo-bottom-top{0%{opacity:0}to{transform:translateY(0)}}@keyframes trengo-bottom-top2{0%{scale:.5;opacity:0}to{transform:translateY(0)}}@keyframes trengo-bottom-top3{0%{transform:translateY(102px);opacity:0}to{transform:translateY(0)}}@keyframes trengo-fade-in{0%{opacity:0}to{opacity:1}}@keyframes trengo-fade-slide-in{0%{opacity:0;transform:translateX(10px)}to{opacity:1;transform:translateX(0)}}@keyframes trengo-widget-launcher{0%{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}#trengo-web-widget .loading{display:block;margin:6px 3px 7px}#trengo-web-widget .loading .dot{height:5px;width:5px;border-radius:50%;background:#c1c1c1;display:inline-block;margin:1px 0 0 5px}#trengo-web-widget .loading .dot:first-child{margin:0}#trengo-web-widget .loading .dot.one{-webkit-animation:trengo_cycleOne 1s ease-in-out infinite;-webkit-animation-direction:normal}#trengo-web-widget .loading .dot.two{-webkit-animation:trengo_cycleTwo 1s ease-in-out infinite;-webkit-animation-direction:normal}#trengo-web-widget .loading .dot.three{-webkit-animation:trengo_cycleThree 1s ease-in-out infinite;-webkit-animation-direction:normal}@-webkit-keyframes trengo_cycleOne{0%{opacity:.4}33.333%{opacity:1}66.6667%{opacity:.4}to{opacity:.4}}@-webkit-keyframes trengo_cycleTwo{0%{opacity:.4}33.333%{opacity:.4}66.6667%{opacity:1}to{opacity:.4}}@-webkit-keyframes trengo_cycleThree{0%{opacity:.4}33.333%{opacity:.4}66.6667%{opacity:.4}to{opacity:1}}</style></body></html>
