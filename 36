@@ -1,0 +1,8 @@
+<?php
+
+$text = 'Never forget what you are, for surely the world will not';
+
+// BEGIN (write your solution here)
+$firstAndLast = substr($text, 0, 1) . substr($text, -1, 1);
+print_r("First: {$firstAndLast[0]}\nLast: {$firstAndLast[1]}");
+// END
