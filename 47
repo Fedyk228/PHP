@@ -1,0 +1,12 @@
+<?php
+
+namespace HexletBasics\Logic\CombineExpressions;
+
+// BEGIN (write your solution here)
+function isInternationalPhone($symbol)
+{
+    $firstСharacter = $symbol[0];
+    $isSame = $firstСharacter === '+';
+    return $isSame;
+}
+// END
