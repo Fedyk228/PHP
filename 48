@@ -1,0 +1,11 @@
+<?php
+
+namespace HexletBasics\Logic\LogicalOperators;
+
+// BEGIN (write your solution here)
+function isLeapYear($day) 
+{
+    return ($day % 400 === 0) || ($day % 4 === 0 && $day % 100 !== 0);
+    
+}
+// END
