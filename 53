@@ -1,0 +1,16 @@
+<?php
+
+namespace HexletBasics\Conditionals\IfElse;
+
+// BEGIN (write your solution here)
+function normalizeUrl($address)
+{
+    if (strpos($address, 'http://') === 0) {
+        $finalAddress = substr($address, 7);
+
+    } else {
+        $finalAddress = $address;
+    }
+    return "https://{$finalAddress}";
+}
+// END
