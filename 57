@@ -1,0 +1,14 @@
+<?php
+
+namespace HexletBasics\Conditionals\Elvis;
+
+// BEGIN (write your solution here)
+function generateAmount($amount, $price)
+{
+    if ($amount === 0) {
+        return $price * 3;
+    } else  {
+        return $amount;     
+    }
+}
+// END
