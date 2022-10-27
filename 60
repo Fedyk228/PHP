@@ -1,0 +1,19 @@
+<?php
+
+namespace HexletBasics\Loops\AgregationString;
+
+// BEGIN (write your solution here)
+function joinNumbersFromRange($text, $times)
+{
+    $i = $text;
+    $result = '';
+    
+
+    while ($i <= $times){
+        $result = "{$result}{$i}";
+        $i = $i + 1;
+    }
+return $result;
+
+}
+// END
