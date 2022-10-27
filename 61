@@ -1,0 +1,15 @@
+<?php
+
+namespace HexletBasics\Loops\IterationOverString;
+
+// BEGIN (write your solution here)
+function printReversedWordBySymbol($string)
+{
+    $i = 0;
+    $result = strrev($string);
+    while ($i < strlen($string)) {
+        print_r("$result[$i]\n");
+    $i = $i + 1;
+    }
+}
+// END
