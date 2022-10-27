@@ -1,0 +1,17 @@
+<?php
+
+namespace HexletBasics\Loops\AgregationNumber;
+
+// BEGIN (write your solution here)
+function multiplyNumbersFromRange($borderStart, $endOfBorder)
+{
+    $i = $borderStart;
+    $product = 1;
+
+    while ($i <= $endOfBorder) {
+        $product = $product * $i;
+        $i = $i + 1;
+    }
+    return $product;
+}
+// END
