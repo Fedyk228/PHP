@@ -1,0 +1,33 @@
+<?php
+
+namespace HexletBasics\Loops\SyntaxSugar;
+
+// BEGIN (write your solution here)
+function filterString($string, $symbol)
+{
+    $result = str_replace($symbol,'',$string);
+    return $result;
+}
+// END
+
+<?php
+
+namespace HexletBasics\Loops\SyntaxSugar;
+
+// BEGIN (write your solution here)
+function filterString($string, $symbol)
+{
+   $i = 0;
+   $result = '';
+
+    while ($i < strlen($string)) {
+        $currentSymbol = $string[$i];
+    
+        if ($currentSymbol !== $symbol) {
+            $result = "{$result}{$currentSymbol}";
+        }
+        $i += 1;
+    }
+    return $result;
+}
+// END
