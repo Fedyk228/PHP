@@ -1,0 +1,21 @@
+<?php
+
+namespace HexletBasics\Loops\Mutators;
+
+// BEGIN (write your solution here)
+function makeItFunny($text, $transferNumber)
+{
+    $i = 0;
+    $result = '';
+        while ($i < strlen($text)){
+            $currentChar = $text[$i];
+
+            if (($i + 1) % $transferNumber === 0){
+            $currentChar = strtoupper($text[$i]);
+            }
+        $result = "{$result}{$currentChar}";
+        $i += 1;
+        }
+    return $result;
+}
+// END
