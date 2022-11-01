@@ -1,0 +1,18 @@
+<?php
+
+namespace HexletBasics\Loops\ForLoop;
+
+// BEGIN (write your solution here)
+function sumOfSeries($char1, $char2)
+{
+    $result = 0;
+
+    for($char1; $char1 <= $char2; $char1 += 1) {
+
+        $result = $result + $char1; 
+ 
+   }
+    return $result;
+}
+
+// END
