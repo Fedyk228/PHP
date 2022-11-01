@@ -1,0 +1,23 @@
+<?php
+
+namespace HexletBasics\DeepIntoStrings\Unicode;
+
+function invertCase($text)
+{
+    // BEGIN (write your solution here)
+    $result = '';
+
+        for ($i = 0; $i < mb_strlen($text); $i += 1) {
+            $char = mb_substr($text, $i, 1);
+            if ($char === mb_strtoupper($char)) {
+                $char = mb_strtolower($char);
+                $result = "{$result}{$char}";
+            } else {
+                $char = mb_strtoupper($char);
+                $result = "{$result}{$char}";
+            }
+            
+        }
+        return $result;
+    // END
+}
