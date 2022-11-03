@@ -1,0 +1,16 @@
+<?php
+
+namespace HexletBasics\Dates\Mkdtime;
+
+// BEGIN (write your solution here)
+function getHexletBirthday()
+{
+    $hour = 0;
+    $minute = 0;
+    $second = 0;
+    $month = 1;
+    $day = 1;
+    $year = 2012;
+    return mktime ( $hour, $minute, $second, $month, $day, $year);
+}
+// END
